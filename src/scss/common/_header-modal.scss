@@ -1,0 +1,83 @@
+// Модалка sideNav
+.sidenav {
+  display: none;
+}
+
+.sidenav.is-open {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.sidenav__link {
+  @media screen and (min-width: 768px) {
+    width: 338px;
+  }
+  background-color: #f5f6fb;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.sidenav__menu-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  border: none;
+  margin-top: 25px;
+  margin-right: 14px;
+  margin-bottom: 21px;
+  margin-left: auto;
+}
+.sidenav__icon-clouse {
+  width: 24px;
+  height: 24px;
+}
+.sidenav__ref {
+  display: block;
+  &:first-child {
+    margin-top: 78px;
+  }
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 34px;
+  border-top: 1px solid #e2e3e5;
+  border-bottom: 1px solid #e2e3e5;
+}
+.header-navigation__menu-btn .header-navigation__icon-close {
+  display: none;
+}
+
+.header-navigation__menu-btn.is-open .header-navigation__icon-close {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.header-navigation__menu-btn.is-open .header-navigation__icon-menu {
+  display: none;
+}
+//Модалка sideNav (таблет)
+
+// модалка поиска
+
+.header-navigation__menu-serch .header-navigation__menu-serch__icon-close {
+  display: none;
+}
+
+.header-navigation__menu-serch.is-open
+  .header-navigation__menu-serch__icon-close {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: block;
+}
+
+.header-navigation__menu-serch.is-open
+  .header-navigation__menu-serch__icon-menu {
+  display: none;
+}
