@@ -10,8 +10,78 @@
     <title>OLX</title>
   </head>
   <body>
-
-<footer class="footer">
+<header>
+    <section class="header-navigation">
+      <div class="container">
+        <div class="header-navigation__box">
+  
+          <button type="button" aria-expanded="false" aria-controls="menu-container" data-menu-button
+            class="header-navigation__menu-btn is-open">
+            <svg aria-label="Переключатель мобильного меню" class="header-navigation__menu-icon">
+              <use class="header-navigation__icon-close" href="./images/sprite-min.svg#icon-menu" widrh="20" height="20">
+              </use>
+            </svg>
+          </button>
+  
+          <a href="./index.html" class="header-navigation_logo">
+            <svg class="header-navigation__icon-logo" width="50" height="20">
+              <use href="./images/sprite-min.svg#icon-logo">
+              </use>
+            </svg>
+          </a>
+  
+          <button type="button" class="header-navigation__menu-serch">
+            <svg aria-label="Меню поиска" class="header-navigation__icon-serch">
+              <use class="header-navigation__menu-serch__icon-menu" href="./images/sprite-min.svg#icon-serch"></use>
+            </svg>
+          </button>
+  
+          <button class="create-an-ad">
+            <span>
+              створити оголошення
+            </span>
+          </button>
+          <button class="header-navigation__menu-acount">
+            <svg aria-label="Меню личного кабинета" class="header-navigation__acount-icon" width="20" height="20">
+              <use class="header-navigation__acount-icon-logo" href="./images/sprite-min.svg#icon-user-profile"></use>
+            </svg>
+          </button>
+          <button class="header-navigation__clear-filter">
+            <svg aria-label="Сброс фильтра" class="header-navigation__clear-filter-icon" width="16" height="20">
+              <use class="header-navigation__clear-filter-icon-logo" href="./images/sprite-min.svg#icon-clear-filter">
+              </use>
+            </svg>
+            <span class="header-navigation__clear-filter-text">Очистити фільтри</span>
+          </button>
+          <div class="flex-break"></div>
+        </div>
+  
+      </div>
+  
+    </section>
+    
+    <div id="sidenav" class="sidenav" data-menu>
+      <div class="sidenav__link">
+        <button class="sidenav__menu-icon" data-clouse-button>
+          <svg aria-label="Переключатель мобильного меню" class="sidenav__icon-clouse">
+            <use class="sidenav__icon-close" href="./images/sprite-min.svg#icon-menu-clouse" widrh="24" height="24">
+            </use>
+          </svg>
+        </button>
+        <a href="" class="sidenav__ref">РЕЄСТРАЦІЯ/УВІЙТИ</a>
+        <a href="" class="sidenav__ref">1</a>
+        <a href="" class="sidenav__ref">2</a>
+        <a href="" class="sidenav__ref">3</a>
+        <a href="" class="sidenav__ref">4</a>
+        <a href="" class="sidenav__ref">5</a>
+        <a href="" class="sidenav__ref">6</a>
+        <a href="" class="sidenav__ref">7</a>
+        <a href="" class="sidenav__ref">8</a>
+      </div>
+    </div>
+  </header>
+  
+  <footer class="footer">
   <div class="footer-section container">
     <div class="footer-item__year">2019</div>
     <div class="footer-item__slasho">|</div>
