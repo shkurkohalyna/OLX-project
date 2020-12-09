@@ -1,4 +1,6 @@
-@import './common/breakpoints.scss';
-@import './common/global.scss';
-
-// @import './common/test.scss';
+@import './common/normalize';
+@import './common/breakpoints';
+@import './common/global';
+@import './common/container';
+@import './common/header';
+@import './common/modal';
