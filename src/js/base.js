@@ -9,10 +9,24 @@ const newUser = {
     "email": "artiss@example.com",
     "password": "qwerty2020"
 };
-
 fetchCategory(API_OLX).then(console.log)
+// fetchRegistration(API_OLX, newUser).then(console.log)
+fetchAuthenticationLogin(API_OLX, newUser)
 
-fetchRegistration(API_OLX, newUser).then(console.log)
+async function fetchGetCall(url, dataRegistry) {
+  const key = localStorage.getItem('key');
+  const options = {
+      method: 'POST',
+      body: JSON.stringify(dataRegistry),
+      headers: {
+          'accept': '*/*',
+          'Authorization': `Bearer ${key}`,
+      },
+  }
+    const response = await fetch(`${url}/auth/logout`,options);
+    const responseJson = await response.json();
 
-fetchAuthenticationLogin(API_OLX, newUser).then(console.log)
+    return responseJson
+};
 
+fetchGetCall(API_OLX, newUser).then(console.log)
