@@ -1,16 +1,16 @@
 .header-navigation {
   position: relative;
-  @media screen and (max-width: 1279px) {
-    border-bottom: 1px solid #e2e3e5;
+  @media screen and (max-width: $desctop-lower) {
+    border-bottom: 1px solid $color-gray-line;
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet-upper) {
     &::after {
       content: ' ';
       position: absolute;
       width: 100%;
       max-width: 1240px;
       height: 1px;
-      background-color: #e2e3e5;
+      background-color: $color-gray-line;
       top: 47%;
       left: 50%;
       transform: translateX(-50%);
@@ -22,11 +22,11 @@
   justify-content: center;
   align-items: center;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet-upper) {
     flex-wrap: wrap;
   }
-  @media screen and (min-width: 1280px) {
-    border-bottom: 1px solid #e2e3e5;
+  @media screen and (min-width: $desctop-upper) {
+    border-bottom: 1px solid $color-gray-line;
   }
 }
 button {
@@ -37,16 +37,16 @@ button {
   position: relative;
   padding: 25px 27px 25px 27px;
   margin-left: -27px;
-  border-right: 1px solid #e2e3e5;
+  border-right: 1px solid $color-gray-line;
   order: 1;
   @media screen and (max-width: 767px) {
     margin-left: -27px;
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet-upper) {
     order: 6;
     margin-right: auto;
   }
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: $desctop-upper) {
     display: none;
   }
 }
@@ -69,7 +69,7 @@ button {
 
   order: 3;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet-upper) {
     order: 1;
     margin-right: auto;
   }
@@ -86,7 +86,7 @@ button {
   text-transform: uppercase;
   font-size: 10px;
   color: white;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet-upper) {
     display: block;
     order: 4;
   }
@@ -97,24 +97,25 @@ button {
   padding: 0;
   order: 3;
   margin-right: 20px;
-  @media screen and (min-width: 768px) and (max-width: 1279px) {
+  @media screen and (min-width: $tablet-upper) and (max-width: $desctop-lower) {
     display: flex;
   }
 }
 .header-navigation__menu-acount .is-login {
   display: none;
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: $desctop-upper) {
     display: block;
     width: 108px;
     justify-content: center;
     align-items: center;
   }
 }
+
 .header-navigation__menu-acount-text {
   display: none;
 }
 .header-navigation__menu-acount-text .is-login {
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: $desctop-upper) {
     display: block;
     text-transform: uppercase;
     text-decoration: underline;
@@ -124,7 +125,7 @@ button {
 }
 .header-navigation__registry-text {
   display: none;
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: $desctop-upper) {
     display: block;
     font-weight: 500;
     line-height: 14px;
@@ -143,13 +144,13 @@ button {
   height: 24px;
   margin-top: 25px;
   margin-bottom: 25px;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet-upper) {
     display: flex;
     order: 7;
     margin-right: 20px;
     align-items: center;
   }
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: $desctop-upper) {
     margin-left: auto;
   }
 }
@@ -168,35 +169,33 @@ button {
 }
 .header-navigation__menu-acount-logout .is-login {
   display: none;
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: $desctop-upper) {
     display: block;
     padding: 25px;
     order: 3;
-    border-left: 1px solid #e2e3e5;
+    border-left: 1px solid $color-gray-line;
   }
 }
 
 .flex-break {
   display: none;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet-upper) {
     display: block;
     order: 5;
     width: 100%;
   }
 }
-.header-navigation__registry {
-  display: none;
-}
+
 .header-navigation__registry {
   display: none;
 
   padding: 0;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet-upper) {
     display: flex;
     order: 3;
     margin-right: 20px;
   }
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: $desctop-upper) {
     width: 130px;
     justify-content: center;
     align-items: center;
