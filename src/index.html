@@ -72,7 +72,7 @@
       <div class="sidenav__link">
         <button class="sidenav__menu-icon" data-clouse-button>
           <svg aria-label="Переключатель мобильного меню" class="sidenav__icon-clouse">
-            <use class="sidenav__icon-close" href="./images/sprite-min.svg#icon-menu-clouse" widrh="24" height="24">
+            <use class="sidenav__icon-close" href="./images/sprite-min.svg#icon-menu-clouse" width="24" height="24">
             </use>
           </svg>
         </button>
@@ -88,7 +88,24 @@
       </div>
     </div>
   </header>
-  
+  <div class="modal-search">
+    <div class="modal-search__overlay"></div>
+    <div class="modal-search__container">
+      <input type="search" name="" id="" class="search-field">
+      <button type="button" class="close__button" data-action="close-modal">
+      <svg aria-label="кнопка закрытия" class="icon-clouse icon-size icon-white">
+        <use class="modal-search__icon-close" href="./images/sprite-min.svg#icon-menu-clouse" width="24" height="24">
+        </use>
+      </svg>
+    </button>
+    <button type="button" class="search__button">
+      <svg aria-label="Кнопка поиска" class="icon-search icon-size icon-white">
+        <use class="icon-serch" href="./images/sprite-min.svg#icon-serch"></use>
+      </svg>
+    </button>
+  </div>
+    
+  </div>
   <footer class="footer">
   <div class="footer-section container">
     <div class="footer-item__year">2019</div>

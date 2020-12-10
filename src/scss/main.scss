@@ -1,7 +1,11 @@
 @import './common/normalize';
 @import './common/breakpoints';
 @import './common/global';
+@import './icons/icons';
 @import './common/container';
 @import './common/header';
 @import './common/header-modal';
 @import './common/footer';
+
+/*модалки*/
+@import './modals/modal-search';
