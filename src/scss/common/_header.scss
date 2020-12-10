@@ -91,15 +91,51 @@ button {
     order: 4;
   }
 }
+
 .header-navigation__menu-acount {
   display: none;
+  padding: 0;
+  order: 3;
+  margin-right: 20px;
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    display: flex;
+  }
+}
+.header-navigation__menu-acount .is-login {
+  display: none;
+  @media screen and (min-width: 1280px) {
+    display: block;
+    width: 108px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.header-navigation__menu-acount-text {
+  display: none;
+}
+.header-navigation__menu-acount-text .is-login {
+  @media screen and (min-width: 1280px) {
+    display: block;
+    text-transform: uppercase;
+    text-decoration: underline;
+    margin-left: 10px;
+    font-size: 12px;
+  }
+}
+.header-navigation__registry-text {
+  display: none;
+  @media screen and (min-width: 1280px) {
+    display: block;
+    font-weight: 500;
+    line-height: 14px;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+}
+.header-navigation__logout-icon {
   width: 20px;
   height: 20px;
-  @media screen and (min-width: 768px) {
-    display: block;
-    order: 3;
-    margin-right: 20px;
-  }
 }
 .header-navigation__clear-filter {
   display: none;
@@ -127,11 +163,42 @@ button {
   margin-left: 11px;
   font-size: 12px;
 }
+.header-navigation__menu-acount-logout {
+  display: none;
+}
+.header-navigation__menu-acount-logout .is-login {
+  display: none;
+  @media screen and (min-width: 1280px) {
+    display: block;
+    padding: 25px;
+    order: 3;
+    border-left: 1px solid #e2e3e5;
+  }
+}
+
 .flex-break {
   display: none;
   @media screen and (min-width: 768px) {
     display: block;
     order: 5;
     width: 100%;
+  }
+}
+.header-navigation__registry {
+  display: none;
+}
+.header-navigation__registry {
+  display: none;
+
+  padding: 0;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    order: 3;
+    margin-right: 20px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 130px;
+    justify-content: center;
+    align-items: center;
   }
 }
