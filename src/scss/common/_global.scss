@@ -31,16 +31,17 @@ button {
   outline: none;
   background-color: none;
 }
-.container {
-  width: 100%;
-  padding: 0 15px;
-  @media screen and (min-width: $tablet-upper) {
-    padding: 0 22px;
-  }
-  @media screen and (min-width: $desctop-upper) {
-    padding: 0 20px;
-  }
-}
+// конфликт!!!
+// .container {
+//   width: 100%;
+//   padding: 0 15px;
+//   @media screen and (min-width: $tablet-upper) {
+//     padding: 0 22px;
+//   }
+//   @media screen and (min-width: $desctop-upper) {
+//     padding: 0 20px;
+//   }
+// }
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -50,4 +51,11 @@ button {
   overflow: hidden;
   border: 0;
   clip: rect(0 0 0 0);
+}
+p {
+  margin: 0;
+}
+button {
+  margin: 0;
+  padding: 0;
 }

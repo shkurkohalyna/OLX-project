@@ -72,11 +72,11 @@
       <div class="sidenav__link">
         <button class="sidenav__menu-icon" data-clouse-button>
           <svg aria-label="Переключатель мобильного меню" class="sidenav__icon-clouse">
-            <use class="sidenav__icon-close" href="./images/sprite-min.svg#icon-menu-clouse" widrh="24" height="24">
+            <use class="sidenav__icon-close" href="./images/sprite-min.svg#icon-menu-clouse" width="24" height="24">
             </use>
           </svg>
         </button>
-        <a href="" class="sidenav__ref">РЕЄСТРАЦІЯ/УВІЙТИ</a>
+        <a href="#" class="sidenav__ref js-sidenav-reg">РЕЄСТРАЦІЯ/УВІЙТИ</a>
         <a href="" class="sidenav__ref">1</a>
         <a href="" class="sidenav__ref">2</a>
         <a href="" class="sidenav__ref">3</a>
@@ -91,7 +91,54 @@
   <!-- конфликт закоментировал, у нас уже есть такая кнопка, но ету оставлю пока чтоб автор сам её удалил -->
   <!-- <button type="button" class="user__button create-ad-js" data-modal-open>Створити оголошення!</button>
   <div class=""></div> -->
-  
+    <div class="auth-backdrop is-hidden" data-auth-modal>
+  <div class="overlay"></div>
+  <div class="auth-popup">
+    <button type="button" class="button-close" data-auth-modal-close>
+      <svg class="icon">
+        <use href="./images/sprite-min.svg#icon-menu-clouse" width="14" height="14">
+        </use>
+      </svg>
+    </button>
+    <p class="auth-popup-text">Ви можете авторизуватися за допомогою Googlt Account:</p>
+    <button type="button" class="button-google">
+      <svg class="icon">
+        <use href="./images/sprite-min.svg#icon-google-symbol" width="18" height="18">
+        </use>
+      </svg>
+      Google </button>
+    <p class="auth-popup-text">Або зайти за допомогою імейлу і пароля, попередньо зареєструвавшись:</p>
+    <form class="auth-form" autocomplete="off" novalidate>
+      <input class="auth-form-input" type="email" id= "Email" placeholder="Email" >
+      <span class="email-error"></span>
+      <input class="auth-form-input" type="password" id="Password" placeholder="Password">
+      <span class="password-error"></span>
+      <div class="auth-button-container">
+      <button type="submit" class="auth-button signin">Увійти</button>
+      <button type="submit" class="auth-button signup">Зареєструватись</button>
+    </div>
+    </form>
+
+  </div>
+</div>
+  <div class="modal-search">
+    <div class="modal-search__overlay"></div>
+    <div class="modal-search__container">
+      <input type="search" name="" id="" class="search-field">
+      <button type="button" class="close__button" data-action="close-modal">
+      <svg aria-label="кнопка закрытия" class="icon-clouse icon-size icon-white">
+        <use class="modal-search__icon-close" href="./images/sprite-min.svg#icon-menu-clouse" width="24" height="24">
+        </use>
+      </svg>
+    </button>
+    <button type="button" class="search__button">
+      <svg aria-label="Кнопка поиска" class="icon-search icon-size icon-white">
+        <use class="icon-serch" href="./images/sprite-min.svg#icon-serch"></use>
+      </svg>
+    </button>
+  </div>
+    
+  </div>
   <footer class="footer">
   <div class="footer-section container">
     <div class="footer-item__year">2019</div>
