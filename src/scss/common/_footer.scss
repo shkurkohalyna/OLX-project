@@ -1,8 +1,9 @@
 .footer-section {
     display: flex;
     flex-wrap: wrap;
+    padding-top: 39px;
+    padding-bottom: 39px;
     width: 320px;
-    margin: 0;
 
     font-family: $montserrat-font-fam;
     font-style: normal;
@@ -12,16 +13,12 @@
     letter-spacing: 0.03em;
     color: #000000;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 550px) {
         flex-wrap: nowrap;
-        text-align: center;
-        min-width: 768px;
-    }
-
-    @media screen and (min-width: 1280px) {
-        flex-wrap: nowrap;
-        text-align: center;
-        min-width: 1280px;
+        justify-content: center;
+        padding-top: 34px;
+        padding-bottom: 34px;
+        min-width: 550px;
     }
 }
 
@@ -33,17 +30,17 @@
         margin: 0 9px 0 0;
     }
     @media screen and (min-width: 1280px) {
-        margin: 0;
+        margin: 0 9px 0 0;
     }
 }
 
-.footer-item__slasho {
+.footer-item__slash-first {
     color: $color-gray-line;
 }
 
-.footer-item__slasht {
+.footer-item__slash-second {
     
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 500px) {
         display: none;
     }
     color: $color-gray-line;
@@ -53,20 +50,43 @@
     margin-bottom: 13px;
     margin-left: 9px;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 500px) {
         margin: 0 9px 0 9px;
     }
     @media screen and (min-width: 1280px) {
-        margin: 0;
+        margin: 0 9px 0 9px;
     }
 }
 
 .footer-item__developers {
-    @media screen and (min-width: 768px) {
-        margin: 0 0 0 9px;
+    position: relative;
+    margin-right: 30px;
+    @media screen and (min-width: 500px) {
+        margin: 0 30px 0 0;
+    }
+
+    @media screen and (min-width: 550px) {
+    margin: 0 30px 0 9px;
     }
 }
 
 .footer-item__underline {
     text-decoration: underline;
+}
+
+.icon-orange-heart {
+    position: absolute;
+    display: inline-flex;
+    right: -23px;
+    top: 4%;
+    bottom: 4%;
+    width: 16px;
+    height: 15px;
+}
+
+.icon-copyright {
+    margin-right: 7px;
+    display: inline-flex;
+    width: 15px;
+    height: 15px;
 }
