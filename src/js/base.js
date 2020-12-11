@@ -8,6 +8,7 @@ import fetchAuthenticationLogin from './fetch/fetchAuthenticationLogin';
 import { fetchLogout } from './fetch/fetchLogout';
 import { fetchCall } from './fetch/fetchCall';
 import { fetchGetUser } from './fetch/fetchGetUser';
+import { fetchGetFavorites } from './fetch/fetchGetFavorites';
 
 const newUser = {
     "email": "artiss@example.com",
@@ -21,5 +22,6 @@ fetchCall(API_OLX, 1).then(console.log)
 fetchCall(API_OLX, 2).then(console.log)
 fetchCall(API_OLX, 3).then(console.log)
 fetchGetUser(API_OLX).then(console.log)
+fetchGetFavorites(API_OLX).then(console.log)
 
-fetchLogout(API_OLX).then(console.log)
+// fetchLogout(API_OLX).then(console.log)
