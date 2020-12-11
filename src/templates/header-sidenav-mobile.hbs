@@ -1,15 +1,7 @@
-<div class="sidenav__link">
-
-    <button type="button" class="sidenav__menu-icon" data-clouse-button>
-        <svg aria-label="Переключатель мобильного меню" class="sidenav__icon-clouse">
-            <use class="sidenav__icon-close" href="./images/sprite-min.svg#icon-menu-clouse" widrh="24" height="24">
-            </use>
-        </svg>
-    </button>
+<ul>
     {{#each this}}
-    <a href="">{{@value}} {{this}}</a>
-    {{!-- <button type="button" class="sidenav__ref">
-        <span> {{@value}} {{this}} </span>
-    </button> --}}
+    <li class="sidenav__ref">
+        {{@value}} {{this}}
+    </li>
     {{/each}}
-</div>
+</ul>

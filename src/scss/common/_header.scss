@@ -11,7 +11,7 @@
       max-width: 1240px;
       height: 1px;
       background-color: $color-gray-line;
-      top: 47%;
+      top: 49%;
       left: 50%;
       transform: translateX(-50%);
     }
@@ -97,31 +97,62 @@ button {
   padding: 0;
   order: 3;
   margin-right: 20px;
-  @media screen and (min-width: $tablet-upper) and (max-width: $desctop-lower) {
-    display: flex;
+}
+.header-navigation__menu-acount.is-login {
+  @media screen and (min-width: $tablet-upper) {
+    display: block;
   }
 }
-.header-navigation__menu-acount .is-login {
-  display: none;
-  @media screen and (min-width: $desctop-upper) {
-    display: block;
-    width: 108px;
-    justify-content: center;
-    align-items: center;
-  }
+.header-navigation__menu-acount-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .header-navigation__menu-acount-text {
   display: none;
-}
-.header-navigation__menu-acount-text .is-login {
   @media screen and (min-width: $desctop-upper) {
     display: block;
     text-transform: uppercase;
-    text-decoration: underline;
     margin-left: 10px;
     font-size: 12px;
   }
+}
+.header-navigation__dropdawn-content {
+  display: none;
+  position: absolute;
+  bottom: -45%;
+  right: 210px;
+  transform: translateY(-50%);
+  background-color: #f9f9f9;
+  width: 152px;
+  height: 94px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  @media screen and (min-width: $desctop-upper) {
+    width: 206px;
+    right: auto;
+  }
+}
+
+.header-navigation__menu-acount:hover .header-navigation__dropdawn-content {
+  display: block;
+}
+.header-navigation__dropdawn-content--text {
+  display: block;
+  text-decoration: none;
+  font-family: $roboto-font-family;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  color: #000000;
+  padding: 10px;
+  margin: 10px;
+}
+.header-navigation__registry.is-login {
+  display: none;
 }
 .header-navigation__registry-text {
   display: none;
@@ -166,17 +197,19 @@ button {
 }
 .header-navigation__menu-acount-logout {
   display: none;
+  padding: 25px;
+  order: 3;
+  border-left: 1px solid $color-gray-line;
 }
-.header-navigation__menu-acount-logout .is-login {
-  display: none;
+.header-navigation__menu-acount-logout.is-login {
   @media screen and (min-width: $desctop-upper) {
     display: block;
-    padding: 25px;
-    order: 3;
-    border-left: 1px solid $color-gray-line;
+    position: relative;
   }
 }
 
+.header-navigation__acount-logout-icon {
+}
 .flex-break {
   display: none;
   @media screen and (min-width: $tablet-upper) {

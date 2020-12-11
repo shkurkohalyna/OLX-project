@@ -2,7 +2,7 @@
 .is-open-modal {
   overflow: hidden;
 }
-// Модалка sideNav
+// ---------------------------------Модалка sideNav
 .sidenav {
   display: none;
 }
@@ -34,7 +34,7 @@
   height: 24px;
   border: none;
   margin-top: 25px;
-  margin-right: 14px;
+  margin-right: 20px;
   margin-bottom: 21px;
   margin-left: auto;
 }
@@ -44,9 +44,6 @@
 }
 .sidenav__ref {
   display: block;
-  &:first-child {
-    margin-top: 78px;
-  }
   padding-top: 25px;
   padding-bottom: 25px;
   padding-left: 34px;
@@ -79,7 +76,7 @@
 .sideNavDesctop__text {
   display: inline-block;
   text-transform: capitalize;
-  font-family: Roboto;
+  font-family: $roboto-font-family;
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
@@ -90,6 +87,98 @@
   &:first-child {
     margin-left: 20px;
   }
+}
+
+.sidenav__menu-acount {
+  display: none;
+}
+.sidenav__menu-acount.is-login {
+  display: flex;
+  position: relative;
+  margin-left: 10px;
+  padding-bottom: 26px;
+  padding-top: 26px;
+}
+.sidenav__menu-acount-btn {
+  display: flex;
+  padding: 0;
+}
+.sidenav__menu-acount-text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  display: block;
+  align-items: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.sidenav__acount-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  margin-left: 37px;
+  padding: 0;
+}
+.sidenav__dropdawn-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: -50%;
+  transform: translateX(65%);
+  width: 200px;
+  background-color: $bg-gray-color;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.sidenav__menu-acount:hover .sidenav__dropdawn-content {
+  display: block;
+}
+.sidenav__dropdawn-content--text {
+  display: block;
+  text-decoration: none;
+  padding: 10px;
+  font-family: $roboto-font-family;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  color: #000000;
+}
+.sidenav__menu-acount-logout {
+  display: none;
+}
+.sidenav__menu-acount-logout .is-login {
+  display: block;
+  margin-left: auto;
+  margin-right: 10px;
+  padding: 6;
+}
+.sidenav__box-login {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #e2e3e5;
+}
+.sidenav__registry {
+  display: block;
+  padding-bottom: 26px;
+  padding-top: 26px;
+}
+.sidenav__registry.is-login {
+  display: none;
+}
+.sidenav__registry-text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 // модалка поиска
 
@@ -109,7 +198,7 @@
   display: none;
 }
 
-//Модалка добавление обьявление
+//------------------------Модалка добавление обьявление
 .create-an-ad-modal {
   display: none;
 }
@@ -286,4 +375,128 @@
   @media screen and (min-width: $desctop-upper) {
     width: 210px;
   }
+}
+// -------------------------------Модальное Окно РЕГЕСТРАЦИИ
+.modal-registration {
+  display: none;
+}
+
+.modal-registration.is-open {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: $backdrop-color;
+  overflow: scroll;
+  z-index: 10;
+}
+.modal-registration__box {
+  display: block;
+  background-color: $bg-gray-color;
+  padding: 15px 15px 60px 20px;
+  margin: 15px;
+  @media screen and (min-width: $tablet-upper) {
+    width: 650px;
+    height: 583px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 283px;
+  }
+}
+.modal-registration__box-main-area {
+  @media screen and (min-width: $tablet-upper) {
+    width: 442px;
+    height: 454px;
+    margin: auto;
+  }
+}
+// кнопка закрытия
+.modal-registration__menu-clouse {
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin-left: auto;
+  margin-bottom: 15px;
+}
+
+.modal-registration__icon-clouse {
+  width: 14px;
+  height: 14px;
+}
+//
+.modal-registration__text {
+  font-family: $roboto-font-family;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+// кнопка рег. гугл
+.modal-registration__btn-google {
+  display: flex;
+  width: 141px;
+  height: 43px;
+  background-color: $white-color;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  font-family: $roboto-font-family;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.modal-registration__google-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+}
+.modal-registration__form {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  @media screen and (min-width: $tablet-upper) {
+    margin-top: 37px;
+    height: 67px;
+  }
+}
+// кнопки рег. и входа
+.modal-registration__input {
+  display: block;
+  height: 56px;
+  width: 100%;
+  margin-bottom: 20px;
+  border: 1px solid #bbbbbb;
+  padding-left: 25px;
+}
+.modal-registration__btn {
+  display: inline-block;
+  padding: 0;
+  width: 118px;
+  height: 50px;
+  font-family: $roboto-font-family;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  @media screen and (min-width: $tablet-upper) {
+    width: 210px;
+    height: 60px;
+    margin-top: 47px;
+  }
+}
+.modal-registration__btn--onLogin {
+  background-color: $orange-color;
+  color: $white-color;
+  margin-right: 14px;
+}
+.modal-registration__btn--onRegistration {
+  border: 1px solid $primary-text-gray;
 }
