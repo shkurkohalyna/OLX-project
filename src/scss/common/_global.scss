@@ -26,3 +26,36 @@ ul {
   padding: 0;
   list-style: none;
 }
+button {
+  border: none;
+  outline: none;
+  background-color: none;
+  margin: 0;
+  padding: 0;
+}
+// конфликт!!!
+// .container {
+//   width: 100%;
+//   padding: 0 15px;
+//   @media screen and (min-width: $tablet-upper) {
+//     padding: 0 22px;
+//   }
+//   @media screen and (min-width: $desctop-upper) {
+//     padding: 0 20px;
+//   }
+// }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+p {
+  margin: 0;
+}
+
+

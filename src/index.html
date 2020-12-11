@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <title>OLX</title>
   </head>
   <body class="is-open-modal">
@@ -20,6 +21,7 @@
 //     reader.readAsDataURL(event.target.files[0]);
 //   }
     </script>
+
     <section class="header-navigation">
       <div class="container">
         <div class="header-navigation__box">
@@ -192,8 +194,6 @@
           <span class="create-an-ad-modal__title-text">Категорія Товару</span>
           <input type="text"  name="categori-product-add" id="categori-product-add" class="create-an-ad-modal__input-area" list="categori-product-add-list" placeholder="Вибіріть категорію">
           <datalist id="categori-product-add-list">
-
-      
           </datalist>
         </li >
         <li class="create-an-ad-modal-li">
@@ -244,9 +244,69 @@
 </div>
 </div>
 </div>
-
-  </header>
-  
+  </header>      
+  <!-- конфликт, закоментировал, у нас уже есть такая кнопка, но ету оставлю пока чтоб автор сам с ней разобрался -->
+  <!-- <button type="button" class="user__button create-ad-js" data-modal-open>Створити оголошення!</button>
+  <div class=""></div> -->
+    <div class="auth-backdrop is-hidden" data-auth-modal>
+  <div class="overlay"></div>
+  <div class="auth-popup">
+    <button type="button" class="button-close" data-auth-modal-close>
+      <svg class="icon">
+        <use href="./images/sprite-min.svg#icon-menu-clouse" width="14" height="14">
+        </use>
+      </svg>
+    </button>
+    <p class="auth-popup-text">Ви можете авторизуватися за допомогою Googlt Account:</p>
+    <button type="button" class="button-google">
+      <svg class="icon">
+        <use href="./images/sprite-min.svg#icon-google-symbol" width="18" height="18">
+        </use>
+      </svg>
+      Google </button>
+    <p class="auth-popup-text">Або зайти за допомогою імейлу і пароля, попередньо зареєструвавшись:</p>
+    <form class="auth-form" autocomplete="off" novalidate>
+      <input class="auth-form-input" type="email" id= "Email" placeholder="Email" >
+      <span class="email-error"></span>
+      <input class="auth-form-input" type="password" id="Password" placeholder="Password">
+      <span class="password-error"></span>
+      <div class="auth-button-container">
+      <button type="submit" class="auth-button signin">Увійти</button>
+      <button type="submit" class="auth-button signup">Зареєструватись</button>
+    </div>
+    </form>
+  </div>
+</div>
+  <div class="modal-search">
+    <div class="modal-search__overlay"></div>
+    <div class="modal-search__container">
+      <input type="search" name="" id="" class="search-field">
+      <button type="button" class="close__button" data-action="close-modal">
+      <svg aria-label="кнопка закрытия" class="icon-clouse icon-size icon-white">
+        <use class="modal-search__icon-close" href="./images/sprite-min.svg#icon-menu-clouse" width="24" height="24">
+        </use>
+      </svg>
+    </button>
+    <button type="button" class="search__button">
+      <svg aria-label="Кнопка поиска" class="icon-search icon-size icon-white">
+        <use class="icon-serch" href="./images/sprite-min.svg#icon-serch"></use>
+      </svg>
+    </button>
+  </div>
+  </div>
+  <footer class="footer">
+  <div class="footer-section container">
+    <div class="footer-item__year">2019</div>
+    <div class="footer-item__slasho">|</div>
+    <div class="footer-item__rights">All Rights Reserved</div>
+    <div class="footer-item__slasht">|</div>
+    <div class="footer-item__developers">Developed with
+      <!-- <svg class="icon">
+      <use href="./images/sprite.svg#icon-favorite-heart-button"></use>
+      </svg> -->
+      by <span class="footer-item__underline">GoIT Students</span></div>
+  </div>
+</footer>
   </body>
 </html>
 <!-- для включение меню авторизованого пользывателя включить клас " is-login" на:
