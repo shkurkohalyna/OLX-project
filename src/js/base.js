@@ -9,11 +9,16 @@ import { fetchLogout } from './fetch/fetchLogout';
 import { fetchCall } from './fetch/fetchCall';
 import { fetchGetUser } from './fetch/fetchGetUser';
 import { fetchGetFavorites } from './fetch/fetchGetFavorites';
+import { fetchGetOwn } from './fetch/fetchGetOwn';
+import { fetchGetFind } from './fetch/fetchGetFind';
+
 
 const newUser = {
     "email": "artiss@example.com",
     "password": "qwerty2020"
 };
+const searchFind = 'Developer';
+
 fetchCategory(API_OLX).then(console.log)
 // fetchRegistration(API_OLX, newUser).then(console.log)
 fetchAuthenticationLogin(API_OLX, newUser).then(response => localStorage.setItem('key', `${response.accessToken}`))
@@ -23,5 +28,7 @@ fetchCall(API_OLX, 2).then(console.log)
 fetchCall(API_OLX, 3).then(console.log)
 fetchGetUser(API_OLX).then(console.log)
 fetchGetFavorites(API_OLX).then(console.log)
+fetchGetOwn(API_OLX).then(console.log)
+fetchGetFind(API_OLX, searchFind).then(console.log)
 
 // fetchLogout(API_OLX).then(console.log)
