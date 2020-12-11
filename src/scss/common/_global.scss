@@ -12,6 +12,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  background-color: $white-color;
 }
 
 img {
@@ -25,11 +26,12 @@ ul {
   padding: 0;
   list-style: none;
 }
-
 button {
   border: none;
   outline: none;
   background-color: none;
+  margin: 0;
+  padding: 0;
 }
 // конфликт!!!
 // .container {
@@ -55,7 +57,5 @@ button {
 p {
   margin: 0;
 }
-button {
-  margin: 0;
-  padding: 0;
-}
+
+

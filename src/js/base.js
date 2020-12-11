@@ -15,3 +15,4 @@ fetchCategory(API_OLX).then(console.log)
 fetchAuthenticationLogin(API_OLX, newUser).then(response => localStorage.setItem('key', `${response.accessToken}`))
 fetchAuthenticationLogin(API_OLX, newUser).then(console.log)
 fetchLogout(API_OLX).then(console.log)
+
