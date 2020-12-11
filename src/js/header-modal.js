@@ -1,5 +1,5 @@
 import { API_OLX } from './url';
-import fetchCategory from './fetchCategory';
+import fetchCategory from './fetch/fetchCategory';
 import MarkupSideNavDesctop from '../templates/header-sidenav-desctop.hbs'
 import MarkupSidenavMobile from '../templates/header-sidenav-mobile.hbs'
 import MarkupModalCreateAnAdCategory from '../templates/header-create-an-ad-category.hbs'

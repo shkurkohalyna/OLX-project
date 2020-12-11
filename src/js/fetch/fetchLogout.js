@@ -8,8 +8,7 @@ export async function fetchLogout(url) {
     },
   };
   const response = await fetch(`${url}auth/logout`, options);
-  const responseJson = await response.json();
-  /*тут добавить функцию удаления с локалстора 'key'*/
-
-  return responseJson;
+  // const responseJson = await response.json();
+  localStorage.removeItem('key');
+  return response;
 }
