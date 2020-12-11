@@ -11,6 +11,7 @@ import { fetchGetUser } from './fetch/fetchGetUser';
 import { fetchGetFavorites } from './fetch/fetchGetFavorites';
 import { fetchGetOwn } from './fetch/fetchGetOwn';
 import { fetchGetFind } from './fetch/fetchGetFind';
+import { fetchGetSpecificCategory } from './fetch/fetchGetSpecificCategory';
 
 
 const newUser = {
@@ -18,6 +19,7 @@ const newUser = {
     "password": "qwerty2020"
 };
 const searchFind = 'Developer';
+const myCategory = 'transport';
 
 fetchCategory(API_OLX).then(console.log)
 // fetchRegistration(API_OLX, newUser).then(console.log)
@@ -30,5 +32,6 @@ fetchGetUser(API_OLX).then(console.log)
 fetchGetFavorites(API_OLX).then(console.log)
 fetchGetOwn(API_OLX).then(console.log)
 fetchGetFind(API_OLX, searchFind).then(console.log)
+fetchGetSpecificCategory(API_OLX, myCategory).then(console.log)
 
 // fetchLogout(API_OLX).then(console.log)
