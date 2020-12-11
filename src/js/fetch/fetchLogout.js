@@ -1,6 +1,5 @@
 export async function fetchLogout(url) {
-  const key = JSON.stringify(localStorage.getItem('key'));
-  console.log(key);
+  const key = localStorage.getItem('key');
   const options = {
     method: 'POST',
     headers: {
@@ -10,6 +9,7 @@ export async function fetchLogout(url) {
   };
   const response = await fetch(`${url}auth/logout`, options);
   const responseJson = await response.json();
+  /*тут добавить функцию удаления с локалстора 'key'*/
 
   return responseJson;
 }
