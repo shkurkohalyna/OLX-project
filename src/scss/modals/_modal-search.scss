@@ -29,6 +29,15 @@
     width: 290px;
     height: 152px;
     background-color: $orange-color;
+    @media screen and(min-width:$tablet-upper) {
+      display: flex;
+      width: 650px;
+      height: 230px;
+    }
+    @media screen and(min-width:$desctop-upper) {
+      width: 850px;
+      height: 230px;
+    }
   }
   & .close__button {
     position: absolute;
@@ -38,6 +47,10 @@
     padding: 0;
     width: 24px;
     height: 24px;
+    @media screen and (min-width: $tablet-upper) {
+      top: 25px;
+      right: 20px;
+    }
   }
   & .search__button {
     position: absolute;
@@ -47,6 +60,13 @@
     padding: 0;
     width: 24px;
     height: 24px;
+    @media screen and (min-width: $tablet-upper) {
+      top: 100px;
+      right: 70px;
+    }
+    @media screen and(min-width:$desctop-upper) {
+      right: 130px;
+    }
   }
   & .search-field {
     width: 251px;
@@ -63,6 +83,19 @@
     border-top: inherit;
     border-right: inherit;
     border-left: inherit;
+    color: $white-color;
     border-bottom: $black-color 1px solid;
+    @media screen and (min-width: $tablet-upper) {
+      margin-right: auto;
+      margin-left: auto;
+      margin-top: 93px;
+      width: 550px;
+      padding: 0;
+      z-index: 5;
+      padding-left: 15px;
+    }
+    @media screen and(min-width:$desctop-upper) {
+      width: 650px;
+    }
   }
 }

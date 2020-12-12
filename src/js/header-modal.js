@@ -1,9 +1,10 @@
 import { API_OLX } from './url';
-import fetchCategory from './fetchCategory';
+import fetchCategory from './fetch/fetchCategory';
 import MarkupSideNavDesctop from '../templates/header-sidenav-desctop.hbs'
 import MarkupSidenavMobile from '../templates/header-sidenav-mobile.hbs'
 import MarkupModalCreateAnAdCategory from '../templates/header-create-an-ad-category.hbs'
 
+const body = document.querySelector(`body`)
 const openSideNav = document.querySelector('[data-menu-button]');
 const mobileMenuRef = document.querySelector('[data-menu]');
 const clouseSideNav = document.querySelector(`[data-clouse-button]`)
@@ -16,6 +17,9 @@ const openModalRegistrartion = document.querySelector(`[data-modal-open-registra
 const modalRegistration = document.querySelector(`[data-menu-registration]`)
 const clouseModalRegistration = document.querySelector(` [data-clouse-button-modal-registration]`)
 const sidenavModalRegistrartion = document.querySelector(`[data-sidenav-open-registration]`)
+const modalSerch = document.querySelector(`.js-modal-search`)
+const btnOpenModalSerch = document.querySelector(`.js-btn-open-modal-serch`)
+const btnClouseModalSerch = document.querySelector(`.js-btn-clouse-modal-serch`)
 // data-sidenav-open-registration
 // открытие - закрытие модалок Хедера
 console.log();
@@ -23,6 +27,7 @@ function onOpenModalHeader(btn, modal) {
         btn.addEventListener(`click`, openModal)
         function openModal() {
                 modal.classList.toggle(`is-open`)
+                body.classList.toggle(`is-open-modal`)
         }
 }
 onOpenModalHeader(openSideNav, mobileMenuRef)
@@ -32,7 +37,8 @@ onOpenModalHeader(clouseModalCreateAnAd, modalCreateAnAd)
 onOpenModalHeader(openModalRegistrartion, modalRegistration)
 onOpenModalHeader(clouseModalRegistration, modalRegistration)
 onOpenModalHeader(sidenavModalRegistrartion,modalRegistration)
-
+onOpenModalHeader(btnOpenModalSerch, modalSerch) 
+onOpenModalHeader(btnClouseModalSerch, modalSerch)
  // sidenav(Desctop) рендер категорий
 fetchCategory(API_OLX).then(responce => appendSideNavDesctop(responce))
 function appendSideNavDesctop(cat) {
@@ -51,7 +57,3 @@ function appendchangeCategoryForCreateAnAd(cat) {
 }
 
 
-
-// для включение меню авторизованого пользывателя включить клас " is-login" на:
-// <button class="sidenav__registry">
-//  <div class="sidenav__menu-acount .is-login">
