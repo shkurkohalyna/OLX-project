@@ -42,7 +42,6 @@
     "postcss-loader": "^4.0.2",
     "sass-loader": "^10.0.2",
     "style-loader": "^1.2.1",
-    "swiper": "^6.4.1",
     "url-loader": "^4.1.0",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
@@ -51,6 +50,7 @@
     "webpackbar": "^4.0.0"
   },
   "dependencies": {
+    "@splidejs/splide": "^2.4.21",
     "core-js": "^3.6.5",
     "handlebars": "^4.7.6"
   }
