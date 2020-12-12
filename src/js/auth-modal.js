@@ -15,7 +15,7 @@ const authRefs = {
 
 // Відкрити і закрити модальне вікно!
 authRefs.regestryBtn.addEventListener('click', openModal);
-authRefs.sideNavRegBtn.addEventListener('click', openModal);
+//  
 authRefs.authModal.addEventListener('click', closeModal);
 function openModal() {
     authRefs.authModal.classList.remove('is-hidden');

@@ -35,3 +35,5 @@ fetchGetFind(API_OLX, searchFind).then(console.log)
 fetchGetSpecificCategory(API_OLX, myCategory).then(console.log)
 
 // fetchLogout(API_OLX).then(console.log)
+
+// fetchCall(API_OLX, 2).then(render => document.querySelector('.cards').innerHTML = templateCard( render.work))

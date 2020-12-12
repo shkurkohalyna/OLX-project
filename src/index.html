@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
     <title>OLX</title>
   </head>
-  <body class="is-open-modal">
+  <body>
   <header>
     <script type='text/javascript'>
 //  function preview_image(event) {
@@ -42,7 +42,7 @@
             </svg>
           </a>
   
-          <button type="button" class="header-navigation__menu-serch">
+          <button type="button" class="header-navigation__menu-serch js-btn-open-modal-serch">
             <svg aria-label="Меню поиска" class="header-navigation__icon-serch">
               <use class="header-navigation__menu-serch__icon-menu" href="./images/sprite-min.svg#icon-serch"></use>
             </svg>
@@ -118,7 +118,7 @@
             <span class="header-navigation__clear-filter-text">Очистити фільтри</span>
           </button>
 
-          <button class="header-navigation__menu-acount-logout is-login">
+          <button data-popup-open class="header-navigation__menu-acount-logout is-login">
             <svg aria-label="Выход из личного кабинета" class="header-navigation__acount-logout-icon" width="20" height="20">
               <use href="./images/sprite-min.svg#icon-logout"></use>
             </svg>
@@ -155,7 +155,7 @@
           <a href="#" class="sidenav__dropdawn-content--text">Обране</a>
         </div>
       </div>
-      <button class="sidenav__menu-acount-logout is-login">
+      <button  class="sidenav__menu-acount-logout is-login">
         <svg aria-label="Выход из личного кабинета" class="sidenav__acount-logout-icon" width="20" height="20">
           <use href="./images/sprite-min.svg#icon-logout"></use>
         </svg>
@@ -252,9 +252,8 @@
     </form>
     </div>
     </div>
-
-<div class="modal-registration" data-menu-registration>
-  <!-- data-clouse-button-modal-registration -->
+<!-- Модалка регистрации -->
+<!-- <div class="modal-registration" data-menu-registration>
   <div class="modal-registration__box ">
     <div class="container">
 <button type="button" class="modal-registration__menu-clouse"  data-clouse-button-modal-registration>
@@ -284,7 +283,8 @@
   </div>
 </div>
 </div>
-</div>
+</div> -->
+
   </header>      
   <!-- конфликт, закоментировал, у нас уже есть такая кнопка, но ету оставлю пока чтоб автор сам с ней разобрался -->
   <!-- <button type="button" class="user__button create-ad-js" data-modal-open>Створити оголошення!</button>
@@ -318,18 +318,18 @@
     </form>
   </div>
 </div>
-  <div class="modal-search">
+  <div class="modal-search js-modal-search">
     <div class="modal-search__overlay"></div>
     <div class="modal-search__container">
-      <input type="search" name="" id="" class="search-field">
-      <button type="button" class="close__button" data-action="close-modal">
+      <input type="search" name="" id="" class="search-field" placeholder="Пошук">
+      <button type="button" class="close__button js-btn-clouse-modal-serch" data-action="close-modal">
       <svg aria-label="кнопка закрытия" class="icon-clouse icon-size icon-white">
-        <use class="modal-search__icon-close" href="./images/sprite-min.svg#icon-menu-clouse" width="24" height="24">
+        <use class="modal-search__icon-close" href="./images/sprite-min.svg#icon-menu-clouse" width="14" height="14">
         </use>
       </svg>
     </button>
     <button type="button" class="search__button">
-      <svg aria-label="Кнопка поиска" class="icon-search icon-size icon-white">
+      <svg aria-label="Кнопка поиска" class="icon-search icon-size icon-white" width="17" height="17">
         <use class="icon-serch" href="./images/sprite-min.svg#icon-serch"></use>
       </svg>
     </button>
@@ -399,6 +399,23 @@
       <div>by <span class="footer-item__underline">GoIT Students</span></div>
     </div>
   </footer>
+  <!-- Выход -->
+  <div class="backdrop-logout is-hidden " data-popup>
+    <div class="popup-logout">
+      <button data-popup-close class="btn-popup-close" aria-label="Закриває модальне вікно">
+        <svg class="icon-popup-close">
+          <use href="./images/sprite-min.svg#icon-menu-clouse"></use>
+        </svg>
+      </button>
+      <h2 class="popup-text">Ви дійсно хочете вийти з акаунта?</h2>
+      <div class="container-popup-btn">
+        <button data-exit class="btn-popup btn-primary " type="submit" aria-label="Входить в акаунт">Вийти</button>
+        <button data-popup-cancel class="btn-popup btn-secondary" type="button"
+          aria-label="Вілміняє вхід в акаунт">Відміна</button>
+      </div>
+    </div>
+  </div>
+ <!-- <div class="container"><div class="cards"></div></div> -->
   </body>
 </html>
 <!-- для включение меню авторизованого пользывателя включить клас " is-login" на:
