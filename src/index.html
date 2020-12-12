@@ -77,7 +77,7 @@
             <span class="header-navigation__clear-filter-text">Очистити фільтри</span>
           </button>
           
-          <button class="header-navigation__menu-acount-logout is-login">
+          <button data-popup-open class="header-navigation__menu-acount-logout is-login">
             <svg aria-label="Выход из личного кабинета" class="header-navigation__acount-logout-icon" width="20" height="20">
               <use href="./images/sprite-min.svg#icon-logout"></use>
             </svg>
@@ -114,7 +114,7 @@
           <a href="#" class="sidenav__dropdawn-content--text">Обране</a>
         </div>
       </div>
-      <button class="sidenav__menu-acount-logout is-login">
+      <button  class="sidenav__menu-acount-logout is-login">
         <svg aria-label="Выход из личного кабинета" class="sidenav__acount-logout-icon" width="20" height="20">
           <use href="./images/sprite-min.svg#icon-logout"></use>
         </svg>
@@ -295,18 +295,38 @@
   </div>
   </div>
   <footer class="footer">
-  <div class="footer-section container">
-    <div class="footer-item__year">2019</div>
-    <div class="footer-item__slasho">|</div>
-    <div class="footer-item__rights">All Rights Reserved</div>
-    <div class="footer-item__slasht">|</div>
-    <div class="footer-item__developers">Developed with
-      <!-- <svg class="icon">
-      <use href="./images/sprite.svg#icon-favorite-heart-button"></use>
-      </svg> -->
-      by <span class="footer-item__underline">GoIT Students</span></div>
+    <div class="footer-section container">
+      <svg class="icon-copyright">
+        <use href="./images/sprite.svg#icon-copyright"></use>
+      </svg>
+      <div class="footer-item__year">2019</div>
+      <div class="footer-item__slash-first">|</div>
+      <div class="footer-item__rights">All Rights Reserved</div>
+      <div class="footer-item__slash-second">|</div>
+      <div class="footer-item__developers">Developed with
+        <svg class="icon-orange-heart">
+        <use href="./images/sprite.svg#icon-orange-heart"></use>
+        </svg>
+      </div>
+      <div>by <span class="footer-item__underline">GoIT Students</span></div>
+    </div>
+  </footer>
+  <!-- Выход -->
+  <div class="backdrop-logout is-hidden " data-popup>
+    <div class="popup-logout">
+      <button data-popup-close class="btn-popup-close" aria-label="Закриває модальне вікно">
+        <svg class="icon-popup-close">
+          <use href="./images/sprite-min.svg#icon-menu-clouse"></use>
+        </svg>
+      </button>
+      <h2 class="popup-text">Ви дійсно хочете вийти з акаунта?</h2>
+      <div class="container-popup-btn">
+        <button data-exit class="btn-popup btn-primary " type="submit" aria-label="Входить в акаунт">Вийти</button>
+        <button data-popup-cancel class="btn-popup btn-secondary" type="button"
+          aria-label="Вілміняє вхід в акаунт">Відміна</button>
+      </div>
+    </div>
   </div>
-</footer>
   </body>
 </html>
 <!-- для включение меню авторизованого пользывателя включить клас " is-login" на:

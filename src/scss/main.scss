@@ -9,9 +9,8 @@
 
 @import './common/modal.scss';
 
-
 /*модалки*/
 @import './modals/modal-search';
 @import './common/auth-modal';
 
-
+@import './common/logout-popup.scss';
