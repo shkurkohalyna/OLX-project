@@ -9,7 +9,7 @@
 
 .sidenav.is-open {
   display: block;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
@@ -23,18 +23,17 @@
     width: 338px;
   }
   background-color: $bg-gray-color;
-  position: absolute;
+  position: static;
   top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  height: inherit;
+  padding-top: 25px;
 }
 .sidenav__menu-icon {
   display: block;
   width: 24px;
   height: 24px;
   border: none;
-  margin-top: 25px;
+
   margin-right: 20px;
   margin-bottom: 21px;
   margin-left: auto;
@@ -177,11 +176,16 @@
 .sidenav__menu-acount-logout {
   display: none;
 }
-.sidenav__menu-acount-logout .is-login {
+.sidenav__menu-acount-logout.is-login {
   display: block;
   margin-left: auto;
-  margin-right: 10px;
+  margin-right: 26px;
   padding: 6;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    fill: $orange-color;
+  }
 }
 .sidenav__box-login {
   display: flex;
@@ -408,7 +412,6 @@
 .modal-registration {
   display: none;
 }
-
 .modal-registration.is-open {
   display: block;
   position: absolute;
@@ -448,7 +451,6 @@
   margin-left: auto;
   margin-bottom: 15px;
 }
-
 .modal-registration__icon-clouse {
   width: 14px;
   height: 14px;
