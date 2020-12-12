@@ -39,6 +39,11 @@ button {
   margin-left: -27px;
   border-right: 1px solid $color-gray-line;
   order: 1;
+  &:hover,
+  &:focus {
+    fill: $orange-color;
+    color: $orange-color;
+  }
   @media screen and (max-width: 767px) {
     margin-left: -27px;
   }
@@ -77,7 +82,12 @@ button {
 .header-navigation__icon-serch {
   width: 24px;
   height: 24px;
+  &:hover,
+  &:focus {
+    fill: $orange-color;
+  }
 }
+
 .create-an-ad {
   display: none;
   width: 188px;
@@ -99,6 +109,11 @@ button {
   margin-right: 20px;
   padding-top: 25px;
   padding-bottom: 25px;
+  &:hover,
+  &:focus {
+    fill: $orange-color;
+    color: $orange-color;
+  }
 }
 .header-navigation__menu-acount.is-login {
   @media screen and (min-width: $tablet-upper) {
@@ -109,6 +124,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .header-navigation__menu-acount-text {
@@ -118,6 +134,10 @@ button {
     text-transform: uppercase;
     margin-left: 10px;
     font-size: 12px;
+    &:hover,
+    &:focus {
+      color: $orange-color;
+    }
   }
 }
 .header-navigation__dropdawn-content {
@@ -152,6 +172,10 @@ button {
   color: #000000;
   padding: 10px;
   margin: 10px;
+  &:hover,
+  &:focus {
+    color: $orange-color;
+  }
 }
 .header-navigation__registry.is-login {
   display: none;
@@ -165,11 +189,20 @@ button {
     font-size: 12px;
     letter-spacing: 0.02em;
     text-transform: uppercase;
+    cursor: pointer;
+    &:hover,
+    &:focus {
+      color: $orange-color;
+    }
   }
 }
 .header-navigation__logout-icon {
   width: 20px;
   height: 20px;
+  &:hover,
+  &:focus {
+    fill: $orange-color;
+  }
 }
 .header-navigation__clear-filter {
   display: none;
@@ -177,6 +210,12 @@ button {
   height: 24px;
   margin-top: 25px;
   margin-bottom: 25px;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    fill: $orange-color;
+    color: $orange-color;
+  }
   @media screen and (min-width: $tablet-upper) {
     display: flex;
     order: 7;
@@ -202,6 +241,11 @@ button {
   padding: 25px;
   order: 3;
   border-left: 1px solid $color-gray-line;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    fill: $orange-color;
+  }
 }
 .header-navigation__menu-acount-logout.is-login {
   @media screen and (min-width: $desctop-upper) {
