@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <title>OLX</title>
   </head>
-  <body class="is-open-modal">
+  <body>
   <header>
     <script type='text/javascript'>
 //  function preview_image(event) {
@@ -41,7 +41,7 @@
             </svg>
           </a>
   
-          <button type="button" class="header-navigation__menu-serch">
+          <button type="button" class="header-navigation__menu-serch js-btn-open-modal-serch">
             <svg aria-label="Меню поиска" class="header-navigation__icon-serch">
               <use class="header-navigation__menu-serch__icon-menu" href="./images/sprite-min.svg#icon-serch"></use>
             </svg>
@@ -277,18 +277,18 @@
     </form>
   </div>
 </div>
-  <div class="modal-search">
+  <div class="modal-search js-modal-search">
     <div class="modal-search__overlay"></div>
     <div class="modal-search__container">
-      <input type="search" name="" id="" class="search-field">
-      <button type="button" class="close__button" data-action="close-modal">
+      <input type="search" name="" id="" class="search-field" placeholder="Пошук">
+      <button type="button" class="close__button js-btn-clouse-modal-serch" data-action="close-modal">
       <svg aria-label="кнопка закрытия" class="icon-clouse icon-size icon-white">
-        <use class="modal-search__icon-close" href="./images/sprite-min.svg#icon-menu-clouse" width="24" height="24">
+        <use class="modal-search__icon-close" href="./images/sprite-min.svg#icon-menu-clouse" width="14" height="14">
         </use>
       </svg>
     </button>
     <button type="button" class="search__button">
-      <svg aria-label="Кнопка поиска" class="icon-search icon-size icon-white">
+      <svg aria-label="Кнопка поиска" class="icon-search icon-size icon-white" width="17" height="17">
         <use class="icon-serch" href="./images/sprite-min.svg#icon-serch"></use>
       </svg>
     </button>
