@@ -1,6 +1,6 @@
 import  { API_OLX } from './url';
-import fetchRegistration from './fetch/fetchRegistration';
-import fetchAuthenticationLogin from './fetch/fetchAuthenticationLogin';
+import { fetchRegistration } from './fetch/fetchRegistration';
+import { fetchAuthenticationLogin } from './fetch/fetchAuthenticationLogin';
 
 const authRefs = {
 regestryBtn: document.querySelector(`[data-modal-open-registration]`),

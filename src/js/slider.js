@@ -1,7 +1,8 @@
 import Splide from '@splidejs/splide';
 
 document.addEventListener( 'DOMContentLoaded', function () {
-	new Splide( '#card-slider', {
+	new Splide( '.splide', {
+        start: 2,
         pagination: false,
         arrows: true,
         direction: 'ltr',
@@ -24,3 +25,13 @@ document.addEventListener( 'DOMContentLoaded', function () {
 		}
 	} ).mount();
 } );
+
+import { API_OLX } from './url';
+import templateCategory from '../templates/category.hbs';
+import templateCatSlider from '../templates/category-slider.hbs';
+import { fetchGetSpecificCategory } from './fetch/fetchGetSpecificCategory';
+import fetchCategory from './fetch/fetchCategory';
+import { fetchCall } from './fetch/fetchCall';
+
+// fetchCategory(API_OLX).then(render => document.querySelector('.category-section').innerHTML = templateCategory(render))
+// fetchCall(API_OLX, 2).then(render => document.querySelector('.slider').innerHTML = templateCatSlider(render))

@@ -7,5 +7,6 @@ export default function getRefs (){
     backdropPopupLogout: document.querySelector('[data-popup]'),
     myAdsCardRender: document.querySelector('.my-ads-rend'), 
     exitAccount: document.querySelector('[data-exit]'), 
+    btnSubmitCreate: document.querySelector('.create-an-ad-modal__submit-btn'),
   }
 }
