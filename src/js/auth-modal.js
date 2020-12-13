@@ -18,8 +18,8 @@ overlay: document.querySelector('.overlay'),
 };
 
 // Змінює класс .is-login 
-const isLogInRefs = document.querySelectorAll('.is-login');
-function changeElem() {
+export const isLogInRefs = document.querySelectorAll('.is-login');
+export function changeElem() {
     isLogInRefs.forEach(el => { el.classList.toggle('is-login') });
 }
 changeElem();
@@ -43,7 +43,7 @@ function closeModal(e) {
          resetForm();
      }
 };
-function resetForm() {
+export function resetForm() {
 authRefs.authForm.reset();
          authRefs.passwordError.textContent = '';
          authRefs.emailError.textContent = '';
