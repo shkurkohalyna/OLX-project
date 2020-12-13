@@ -1,0 +1,127 @@
+.cardset {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.card {
+  max-width: 290px;
+  margin: 0 10px;
+}
+
+@media screen and (min-width: $phone) {
+  .card {
+    max-width: 352px;
+  }
+}
+
+@media screen and (min-width: $tablet-upper) {
+  .card {
+    width: 295px;
+  }
+}
+
+.card__link {
+  position: relative;
+  overflow: hidden;
+  box-shadow: $shade;
+  &:hover,
+  &:focus {
+    & .card__overlay {
+      transform: translateY(-100%);
+      opacity: 1;
+    }
+    & .card__icons {
+      opacity: 1;
+    }
+    & .card__image {
+      object-position: top;
+    }
+  }
+}
+
+.card__picture {
+  object-fit: cover;
+  object-position: center center;
+  will-change: object-position;
+  transition: object-position $transition;
+  width: 100%;
+  height: calc((100vw - 30px) * 275 / 290);
+  @media screen and (min-width: $tablet-upper),
+    screen and (min-width: $phone) and (orientation: landscape) {
+    height: calc((100vw - 64px) / 2 * 275 / 352);
+  }
+  @media screen and (min-width: $desctop-upper) {
+    height: calc((100vw - 100px) / 4 * 275 / 295);
+  }
+}
+
+.card__description {
+  position: relative;
+  z-index: 10;
+  height: 75px;
+  width: 100%;
+  padding: 20px;
+  background: $white-color;
+}
+
+.card__title {
+  font-weight: 300;
+  color: $primary-text-color;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.card__price {
+  font-weight: 700;
+  font-size: 14px;
+  color: $primary-text-color;
+  &.new {
+    color: $orange-color;
+  }
+  &.old {
+    color: $primary-text-gray;
+    padding: 0 3px;
+  }
+  &.del {
+    color: $primary-text-color;
+    text-decoration: line-through;
+    padding-right: 7px;
+  }
+}
+
+.card__overlay {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  height: 100%;
+  width: 100%;
+  background: $backdrop-color;
+  padding: 20px;
+  padding-bottom: 95px;
+  opacity: 0;
+  will-change: opacity, transform;
+  transition: transform $transition, opacity $transition;
+  & .icons-container {
+    width: 24px;
+    height: 24px;
+    &:first-child {
+      margin-bottom: 10px;
+    }
+    &:last-child {
+      margin-top: auto;
+    }
+  }
+}
+
+.card__icons {
+  font-size: 14px;
+  color: $white-color;
+  opacity: 0;
+  transition: opacity $transition;
+  &.unauthorized {
+    display: none;
+  }
+}
