@@ -1,5 +1,5 @@
 // Принимает ключ `key` по которому будет произведена выборка.
-const load = key => {
+export const load = key => {
   try {
     const serializedState = localStorage.getItem(key);
 
@@ -10,7 +10,7 @@ const load = key => {
 };
 
 // Принимает ключ `key` и значение `value`.
-const save = (key, value) => {
+export const save = (key, value) => {
   try {
     const serializedState = JSON.stringify(value);
     localStorage.setItem(key, serializedState);
@@ -19,9 +19,9 @@ const save = (key, value) => {
   }
 };
 // Принимает ключ и удаляет его
-const remove = key => {
+export const remove = key => {
   try {
-    localStorage.setItem(key);
+    localStorage.removeItem(key);
   } catch (err) {
     console.error('Remove state error: ', err);
   }

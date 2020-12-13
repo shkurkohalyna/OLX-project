@@ -1,5 +1,7 @@
+import { load, remove } from "../localStorage";
+
 export async function fetchLogout(url) {
-  const key = localStorage.getItem('key');
+  const key = load('key');
   const options = {
     method: 'POST',
     headers: {
@@ -9,6 +11,6 @@ export async function fetchLogout(url) {
   };
   const response = await fetch(`${url}auth/logout`, options);
   // const responseJson = await response.json();
-  localStorage.removeItem('key');
+  remove('key');
   return response;
 }
