@@ -1,4 +1,7 @@
+import { load } from "../localStorage";
+
 export async function fetchPostCall(url, data) {
+    const key = load('key');
     const options = {
   method: 'POST',
   body: JSON.stringify(data),

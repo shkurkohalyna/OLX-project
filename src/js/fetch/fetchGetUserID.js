@@ -1,7 +1,4 @@
-import { load } from "../localStorage";
-
-export async function fetchGetUserID(url) {
-  const id = load('UserToken').user.id;
+export async function fetchGetUserID(url, id) {
   const options = {
     method: 'GET',
     headers: {
