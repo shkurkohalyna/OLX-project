@@ -55,10 +55,12 @@ fetchPostAddFavoriteID(API_OLX,cardID).then(console.log) /*добавляет в
 
 fetchCall(API_OLX, 2).then(render => document.querySelector('.cards').innerHTML = templateCard(render.trade)) /**тесловый фич для слайдера и т.д. */
 
+// fetchLogout(API_OLX).then(console.log)
 /*ещё не работает*/
 const refs = getRefs();
 console.log(refs.btnSubmitCreate);
 refs.btnSubmitCreate.addEventListener('submit', postSubmitCreate)
+
 
 async function postSubmitCreate(event) {
     event.preventDefault();
