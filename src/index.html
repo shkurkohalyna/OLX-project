@@ -306,10 +306,10 @@
       </svg>
       Google </button>
     <p class="auth-popup-text">Або зайти за допомогою імейлу і пароля, попередньо зареєструвавшись:</p>
-    <form class="auth-form" autocomplete="off" novalidate>
-      <input class="auth-form-input" type="email" id= "Email" placeholder="Email" >
+    <form class="auth-form" autocomplete="off" novalidate onkeypress="return event.keyCode != 13;">
+      <input class="auth-form-input" type="email" name="email" id= "Email" placeholder="Email" >
       <span class="email-error"></span>
-      <input class="auth-form-input" type="password" id="Password" placeholder="Password">
+      <input class="auth-form-input" type="password" name="password" id="Password" placeholder="Password">
       <span class="password-error"></span>
       <div class="auth-button-container">
       <button type="submit" class="auth-button signin">Увійти</button>
