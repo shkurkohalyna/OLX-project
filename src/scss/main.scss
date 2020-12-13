@@ -1,4 +1,17 @@
 @import './common/breakpoints.scss';
 @import './common/global.scss';
 
+<<<<<<< Updated upstream
 // @import './common/test.scss';
+=======
+@import './common/modal.scss';
+
+/*модалки*/
+@import './modals/modal-search';
+@import './common/auth-modal';
+
+@import './common/logout-popup.scss';
+@import './modals/modal_card_item';
+
+@import './common/test.scss';
+>>>>>>> Stashed changes
