@@ -32,12 +32,12 @@ fetchCategory(API_OLX).then(console.log)
 // }
 //     )
 fetchAuthenticationLogin(API_OLX, newUser).then(response => { save('UserToken', response) })
-console.log(load('UserToken'));
+console.log(load('UserToken').user.id);
 // fetchAuthenGoogle(API_OLX).then(console.log) /**ещё работает */
 fetchCall(API_OLX, 1).then(console.log)
 fetchCall(API_OLX, 2).then(console.log)
 fetchCall(API_OLX, 3).then(console.log)
-fetchGetUser(API_OLX).then(console.log) 
+// fetchGetUser(API_OLX).then(console.log) 
 fetchGetUserID(API_OLX).then(console.log).catch(console.log)
 // fetchGetFavorites(API_OLX).then(console.log)
 // fetchGetOwn(API_OLX).then(console.log)
