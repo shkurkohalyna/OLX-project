@@ -1,5 +1,7 @@
+import { load } from "../localStorage";
+
 export async function fetchGetOwn(url) {
-  const key = localStorage.getItem('key');
+  const key = load('key');
   const options = {
     method: 'GET',
     headers: {
