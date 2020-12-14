@@ -21,7 +21,7 @@ import { fetchPostAddFavoriteID } from './fetch/fetchPostAddFavoriteID';
 
 
 const cardID = '5fd394e86da6ab0017dbf5d4';
-const userId = load('UserToken').user.id;
+// const userId = load('UserToken').user.id;
 const newUser = {
     "email": "artiss@example.com",
     "password": "qwerty2020"
@@ -37,7 +37,7 @@ fetchAuthenticationLogin(API_OLX, newUser).then(response => {
 }
     )
 fetchAuthenticationLogin(API_OLX, newUser).then(response => { save('UserToken', response) }) 
-console.log(load('UserToken').user.id);
+// console.log(load('UserToken').user.id);
 // fetchAuthenGoogle(API_OLX).then(console.log) /**ещё работает */
 fetchCall(API_OLX, 1).then(console.log)
 fetchCall(API_OLX, 2).then(console.log)
