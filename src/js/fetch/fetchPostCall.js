@@ -10,7 +10,7 @@ export async function fetchPostCall(url, data) {
       'accept': 'application/json',
       'Authorization': `${key}`,
   },
-}
+    }
     const response = await fetch(`${url}call`,options);
     const responseJson = await response.json();
     return responseJson
