@@ -1,17 +1,20 @@
-@import './common/breakpoints.scss';
-@import './common/global.scss';
-
-<<<<<<< Updated upstream
-// @import './common/test.scss';
-=======
+@import './common/normalize';
+@import './common/breakpoints';
+@import './common/global';
+@import './icons/icons';
+@import './common/container';
+@import './common/header';
+@import './common/header-modal';
+@import './common/slider';
+@import './common/footer';
 @import './common/modal.scss';
 
 /*модалки*/
 @import './modals/modal-search';
 @import './common/auth-modal';
-
 @import './common/logout-popup.scss';
 @import './modals/modal_card_item';
 
-@import './common/test.scss';
->>>>>>> Stashed changes
+//card
+@import './common/card.scss';
+

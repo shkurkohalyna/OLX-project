@@ -1,0 +1,21 @@
+.container {
+  max-width: 767px;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @media screen and (min-width: 768px), (orientation: landscape) {
+    max-width: 1279px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media screen and (min-width: 1280px) {
+    max-width: 1280px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

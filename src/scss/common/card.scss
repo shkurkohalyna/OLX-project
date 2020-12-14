@@ -1,0 +1,128 @@
+.cardset {
+  @media screen and (max-width: 767px) {
+    display: block;
+    margin: -15px;
+  }
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card__item {
+  margin: 15px;
+  transition: $transition;
+
+  &:hover {
+    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      0px 1px 1px rgba(0, 0, 0, 0.12);
+  }
+
+  @media screen and (min-width: 768px) {
+    margin: 0;
+    flex-basis: calc((100%) / 2);
+  }
+
+  @media screen and (min-width: 1280px) {
+    flex-basis: calc((100%) / 4);
+  }
+}
+
+.card__link {
+  display: block;
+  text-decoration: none;
+
+  &:hover .card__position {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.card__container {
+  position: relative;
+  overflow: hidden;
+}
+
+.card__position {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 95px;
+  padding: 20px;
+  background: $backdrop-color;
+  // transform: translateY(100%);
+  will-change: opacity, transform;
+  transition: transform $transition, opacity $transition;
+  opacity: 0;
+  & .icons-container {
+    width: 24px;
+    height: 24px;
+    &:first-child {
+      margin-bottom: 10px;
+    }
+    &:last-child {
+      margin-top: auto;
+    }
+  }
+}
+
+// .card__picture {
+// padding: -15px; // object-fit: cover;
+// object-position: center center;
+// will-change: object-position;
+// transition: object-position $transition;
+// width: 100%;
+// height: calc((100vw - 30px) * 275 / 290);
+// @media screen and (min-width: $tablet-upper),
+//   screen and (min-width: $phone) and (orientation: landscape) {
+//   // height: calc((100vw) / 2 * 275 / 352);
+// }
+//   @media screen and (min-width: $desctop-upper) {
+//     height: calc((100vw - 100px) / 4 * 275 / 295);
+//   }
+// }
+
+// .card__picture {
+//   height: 295px;
+//   width: 290px;
+// }
+
+.card__description {
+  position: relative;
+  z-index: 10;
+  // height: 75px;
+  width: 100%;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  background: $white-color;
+}
+
+.card__title {
+  font-weight: 300;
+  color: $primary-text-color;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.card__price {
+  font-weight: 700;
+  font-size: 14px;
+  color: $primary-text-color;
+  &.new {
+    color: $orange-color;
+  }
+  &.old {
+    color: $primary-text-gray;
+    padding: 0 3px;
+  }
+  &.del {
+    color: $primary-text-color;
+    text-decoration: line-through;
+    padding-right: 7px;
+  }
+}
