@@ -6,4 +6,6 @@ import './js/pagination-category';
 // import './js/modal';
 import './js/auth-modal';
 import './js/logout-popup';
+import './js/item-modal';
+import './js/dropdowm-menu';
 

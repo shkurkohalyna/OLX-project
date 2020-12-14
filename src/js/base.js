@@ -19,6 +19,7 @@ import { fetchPostCall } from './fetch/fetchPostCall';
 import { fetchPostAddFavoriteID } from './fetch/fetchPostAddFavoriteID';
 
 
+
 const cardID = '5fd394e86da6ab0017dbf5d4';
 const userId = load('UserToken').user.id;
 const newUser = {
@@ -50,13 +51,11 @@ fetchCall(API_OLX, 3).then(console.log)
 // fetchGetSpecificCategory(API_OLX, myCategory).then(console.log) /**находит определённую категорию */
 // fetchAuthenRefresh(API_OLX).then(console.log) /*обновляет 'key','refreshToken','sid'*/
 fetchPostAddFavoriteID(API_OLX,cardID).then(console.log) /*добавляет в избраное*/
-
 // fetchLogout(API_OLX).then(console.log) /*выход за Аккаунту и удаляет 'key'*/
 
 fetchCall(API_OLX, 2).then(render => document.querySelector('.cards').innerHTML = templateCard(render.trade)) /**тесловый фич для слайдера и т.д. */
 
-// fetchLogout(API_OLX).then(console.log)
-/*ещё не работает*/
+/*ещё не работает, должно сабмитить поля с созданой карточки*/
 const refs = getRefs();
 console.log(refs.btnSubmitCreate);
 refs.btnSubmitCreate.addEventListener('submit', postSubmitCreate)
@@ -77,3 +76,4 @@ async function postSubmitCreate(event) {
     fetchPostCall(API_OLX, dataField).then(console.log)
     console.log(event.currentTarget);
 }
+

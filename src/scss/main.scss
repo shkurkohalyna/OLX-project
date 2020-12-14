@@ -7,14 +7,14 @@
 @import './common/header-modal';
 @import './common/slider';
 @import './common/footer';
-
 @import './common/modal.scss';
 
 /*модалки*/
 @import './modals/modal-search';
 @import './common/auth-modal';
-
 @import './common/logout-popup.scss';
+@import './modals/modal_card_item';
 
 //card
 @import './common/card.scss';
+

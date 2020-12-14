@@ -13,16 +13,15 @@
   <body>
   <header>
     <script type='text/javascript'>
-//  function preview_image(event) {
-//     var reader = new FileReader();
-//     reader.onload = function () {
-//       var output = document.getElementById('add-image');
-//       output.src = reader.result;
-//     }
-//     reader.readAsDataURL(event.target.files[0]);
-//   }
+ function preview_image(event) {
+    var reader = new FileReader();
+    reader.onload = function () {
+      var output = document.getElementById('add-image');
+      output.src = reader.result;
+    }
+    reader.readAsDataURL(event.target.files[0]);
+  }
     </script>
-
     <section class="header-navigation">
       <div class="container">
         <div class="header-navigation__box">
@@ -61,8 +60,8 @@
             <span class="header-navigation__menu-acount-text">Мій кабінет</span>
           </button>
           <div class="header-navigation__dropdawn-content">
-            <a href="#" class="header-navigation__dropdawn-content--text" >Мої оголошення</a>
-            <a href="#" class="header-navigation__dropdawn-content--text" >Обране</a>
+            <a href="#" class="header-navigation__dropdawn-content--text" data-dropdown-ad>Мої оголошення</a>
+            <a href="#" class="header-navigation__dropdawn-content--text" data-dropdown-favourites>Обране</a>
           </div>
           </div>
          
@@ -155,7 +154,9 @@
           <a href="#" class="sidenav__dropdawn-content--text">Обране</a>
         </div>
       </div>
-      <button data-popup-open  class="sidenav__menu-acount-logout is-login">
+<!--       <button  class="sidenav__menu-acount-logout is-login"> /**неуверен что ненужно*/ -->
+      <button data-popup-open  class="sidenav__menu-acount-logout is-login"> 
+
         <svg aria-label="Выход из личного кабинета" class="sidenav__acount-logout-icon" width="20" height="20">
           <use href="./images/sprite-min.svg#icon-logout"></use>
         </svg>
@@ -310,6 +311,7 @@
       <input class="auth-form-input" type="email" name="email" id= "Email" placeholder="Email" >
       <span class="email-error"></span>
       <input class="auth-form-input" type="password" name="password" id="Password" placeholder="Password">
+
       <span class="password-error"></span>
       <div class="auth-button-container">
       <button type="submit" class="auth-button signin">Увійти</button>
@@ -337,6 +339,52 @@
   </div>
 <!--Annet влезла-->
 <!--Slider-->
+    <!-- <div class="splide" id="card-slider">
+      <div class="splide__arrows">
+        <button class="splide__arrow splide__arrow--prev">
+          <svg class="pre-btn">
+            <use href="./images/sprite.svg#icon-prev-btn"></use>
+          </svg>
+        </button>
+        <button class="splide__arrow splide__arrow--next">
+          <svg class="next-btn">
+            <use href="./images/sprite.svg#icon-next-btn"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <h4>Heading 01</h4>
+            <div>
+              Description 01
+            </div></li>
+          <li class="splide__slide">
+            <h4>Heading 01</h4>
+            <div>
+              Description 01
+            </div></li>
+          <li class="splide__slide">
+            <h4>Heading 01</h4>
+            <div>
+              Description 01
+            </div></li>
+        </ul>
+      </div>
+    </div> -->
+
+======= /**незнаю нужно ли?*/
+    <div class="container">
+      <section class="categories"></section>
+      <div class="pagination" data-pagination>
+        <a class="pagination__link active" href="#one">1</a>
+        <a class="pagination__link" href="#two">2</a>
+        <a class="pagination__link" href="#three">3</a>
+      </div>
+    </div>
+  </div>
+<!--Annet влезла-->
+=======
   <div class="slider container">
     
   </div>
@@ -358,6 +406,73 @@
 
 </div>
 <!-- at the end  -->
+<div class="container">
+   <div class="cards">
+
+   </div>
+  </div>
+
+
+  <!--Модалка с карточкой товара с детальной информацией-->
+  <div class="overlay" data-item-modal>
+    <div class="modal-container">
+
+      <div data-item-modal-close>
+        <svg class="modal-container-close-icon">
+          <use href="./images/sprite-min.svg#icon-menu-clouse"></use>
+        </svg>
+      </div>
+
+      <div class="header">
+        <p class="header-title" data-item-modal-title></p>
+        <p class="header-item-code" data-item-modal-code>Код товару | 105-С</p>
+      </div>
+
+      <div class="image-block">
+        <img class="image-block-img" data-item-modal-imagebig src="https://estore.ua/media/catalog/product/cache/8/image/650x650/9df78eab33525d08d6e5fb8d27136e95/m/t/mtp72_vw_34fr_watch-40-alum-gold-nc-5s_vw_34fr_wf_co_4.jpeg" alt="">
+        <ul class="image-block-small-list" data-item-modal-image-list>
+        </ul>
+      </div>
+
+      <div class="nav-and-description">
+          <p class="nav-and-description-price" data-item-modal-price></p>
+          <button class="nav-and-description-button" data-item-modal-salerinfo>
+          </button>
+          <ul class="nav-and-description-navlist">
+            <li data-item-modal-favourites class="nav-and-description-navlist-favourites">
+              <p>В обране</p>
+              <svg class="nav-and-description-navlist-favourites-icon">
+                <use href="./images/sprite-min.svg#icon-heart-like"></use>
+              </svg>
+            </li>
+            <li data-item-modal-share class="nav-and-description-navlist-share">
+              <p>Поділитися</p>
+              <svg class="nav-and-description-navlist-share-icon">
+                <use href="./images/sprite-min.svg#icon-share"></use>
+              </svg>
+            </li>
+          </ul>
+          <p class="nav-and-description-smalltitle">Опис:</p>
+          <p data-item-modal-description class="nav-and-description-text"></p>
+      </div>
+    </div>
+  </div>
+  <!-- Выход -->
+  <div class="backdrop-logout is-hidden " data-popup>
+    <div class="popup-logout">
+      <button data-popup-close class="btn-popup-close" aria-label="Закриває модальне вікно">
+        <svg class="icon-popup-close">
+          <use href="./images/sprite-min.svg#icon-menu-clouse"></use>
+        </svg>
+      </button>
+      <h2 class="popup-text">Ви дійсно хочете вийти з акаунта?</h2>
+      <div class="container-popup-btn">
+        <button data-exit class="btn-popup btn-primary " type="submit" aria-label="Входить в акаунт">Вийти</button>
+        <button data-popup-cancel class="btn-popup btn-secondary" type="button"
+          aria-label="Вілміняє вхід в акаунт">Відміна</button>
+      </div>
+    </div>
+  </div>
   <footer class="footer">
     <div class="footer-section container">
       <svg class="icon-copyright">
@@ -375,22 +490,6 @@
       <div>by <span class="footer-item__underline">GoIT Students</span></div>
     </div>
   </footer>
-  <!-- Выход -->
-  <div class="backdrop-logout is-hidden " data-popup>
-    <div class="popup-logout">
-      <button data-popup-close class="btn-popup-close" aria-label="Закриває модальне вікно">
-        <svg class="icon-popup-close">
-          <use href="./images/sprite-min.svg#icon-menu-clouse"></use>
-        </svg>
-      </button>
-      <h2 class="popup-text">Ви дійсно хочете вийти з акаунта?</h2>
-      <div class="container-popup-btn">
-        <button data-exit class="btn-popup btn-primary " type="submit" aria-label="Входить в акаунт">Вийти</button>
-        <button data-popup-cancel class="btn-popup btn-secondary" type="button"
-          aria-label="Вілміняє вхід в акаунт">Відміна</button>
-      </div>
-    </div>
-  </div>
   </body>
 </html>
 <!-- для включение меню авторизованого пользывателя включить клас " is-login" на:
