@@ -243,6 +243,7 @@
   left: 0;
   background-color: $backdrop-color;
   overflow: scroll;
+  z-index: 2;
 }
 .create-an-ad-modal__box {
   background-color: $white-color;
