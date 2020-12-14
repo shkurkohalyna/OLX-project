@@ -1,7 +1,6 @@
 import { API_OLX } from './url';
 import { fetchCall } from './fetch/fetchCall';
-// import fetchFavourites from './fetch/fetchFavourites';
-import fetchFavouritesDelete from './fetchFavouritesDelete';
+import { fetchFavouritesDelete } from './fetchFavouritesDelete';
 import { fetchGetFavorites } from './fetch/fetchGetFavorites';
 import { fetchPostAddFavoriteID } from './fetch/fetchPostAddFavoriteID';
 import { fetchGetUserID } from './fetch/fetchGetUserID';

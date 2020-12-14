@@ -1,6 +1,6 @@
 import { load } from "./localStorage";
 
-export default async function fetchFavouritesDelete(url, id) {
+export async function fetchFavouritesDelete(url, id) {
     const key = load('key');
     const options = {
   method: 'DELETE',
