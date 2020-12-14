@@ -3,22 +3,23 @@ import getRefs from './refs';
 import templateCard from '../templates/cardset.hbs';
 import { load, save, remove } from './localStorage'; 
 import {fetchCategory} from './fetch/fetchCategory'; /** */
+import { fetchGetSpecificCategory } from './fetch/fetchGetSpecificCategory';
 import { fetchRegistration } from './fetch/fetchRegistration';/** */
 import {fetchAuthenticationLogin} from './fetch/fetchAuthenticationLogin';/** */
 import { fetchLogout } from './fetch/fetchLogout';
-import { fetchCall } from './fetch/fetchCall';
 import { fetchGetUser } from './fetch/fetchGetUser';
 import { fetchGetUserID } from './fetch/fetchGetUserID';
 import { fetchGetFavorites } from './fetch/fetchGetFavorites';
-import { fetchGetOwn } from './fetch/fetchGetOwn';
-import { fetchGetFind } from './fetch/fetchGetFind';
-import { fetchGetSpecificCategory } from './fetch/fetchGetSpecificCategory';
-// import { fetchAuthenGoogle } from './fetch/fetchAuthenGoogle'; непонятно как работает?
-import { fetchAuthenRefresh } from './fetch/fetchAuthenRefresh';
-import { fetchPostCall } from './fetch/fetchPostCall'; /*ошибка сервера 500,я не могу проверить*/
-import { fetchPatchCall } from './fetch/fetchPatchCall';/**немогу достучатся, пока не знаю в чём проблема */
 import { fetchPostAddFavoriteID } from './fetch/fetchPostAddFavoriteID';
 import { fetchDeleteFavoriteID } from './fetch/fetchDeleteFavoriteID';
+import { fetchGetOwn } from './fetch/fetchGetOwn'; /***мои товары */
+import { fetchGetFind } from './fetch/fetchGetFind'; /**найти товар */
+// import { fetchAuthenGoogle } from './fetch/fetchAuthenGoogle'; непонятно как работает?
+import { fetchCall } from './fetch/fetchCall';
+import { fetchPostCall } from './fetch/fetchPostCall'; /*ошибка сервера 500,я не могу проверить*/
+import { fetchPatchCall } from './fetch/fetchPatchCall';/**немогу достучатся, скорей всего нужно применять на товаре созданым в своей учётке*/
+import { fetchDeleteCallID } from './fetch/fetchDeleteCallID';
+import { fetchAuthenRefresh } from './fetch/fetchAuthenRefresh';
 
 
 /***************************примеры данных для фетч */
@@ -58,6 +59,7 @@ fetchCall(API_OLX, 2).then(console.log)
 fetchCall(API_OLX, 3).then(console.log)
 // fetchPostCall(API_OLX, dataField).then(console.log)
 fetchPatchCall(API_OLX, dataField, cardID).then(console.log)
+// fetchDeleteCallID(API_OLX, cardID).then(console.log)
 // fetchGetUser(API_OLX).then(console.log) /**дает данные user по 'key'  */
 // fetchGetUserID(API_OLX, userId).then(console.log).catch(console.log) /**дает данные user по 'id'  */
 // fetchGetFavorites(API_OLX).then(console.log)
