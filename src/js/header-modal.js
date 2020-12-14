@@ -20,6 +20,7 @@ const sidenavModalRegistrartion = document.querySelector(`[data-sidenav-open-reg
 const modalSerch = document.querySelector(`.js-modal-search`)
 const btnOpenModalSerch = document.querySelector(`.js-btn-open-modal-serch`)
 const btnClouseModalSerch = document.querySelector(`.js-btn-clouse-modal-serch`)
+const btnOpenCreateAnAdMobile = document.querySelector(`.js-create-an-ad-modal-mobile`)
 // data-sidenav-open-registration
 // открытие - закрытие модалок Хедера
 console.log();
@@ -33,7 +34,9 @@ function onOpenModalHeader(btn, modal) {
 onOpenModalHeader(openSideNav, mobileMenuRef)
 onOpenModalHeader(clouseSideNav, mobileMenuRef)
 onOpenModalHeader(openCreateAnAd, modalCreateAnAd)
+onOpenModalHeader(btnOpenCreateAnAdMobile, modalCreateAnAd)
 onOpenModalHeader(clouseModalCreateAnAd, modalCreateAnAd)
+
 // onOpenModalHeader(openModalRegistrartion, modalRegistration)
 // onOpenModalHeader(clouseModalRegistration, modalRegistration)
 // onOpenModalHeader(sidenavModalRegistrartion,modalRegistration)
