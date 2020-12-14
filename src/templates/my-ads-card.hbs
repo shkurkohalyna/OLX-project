@@ -1,0 +1,33 @@
+<section class=" my-ads container ">
+  <h1 class="my-ads-section-title">Мої оголошення</h1>
+  <div class="my-ads-container ">
+    {{#each this}}
+    <article class="my-ads-card">
+      <div class="my-ads-img-container ">
+        <img class="my-ads-img" src={{imageUrls}} alt={{description}}>
+        <div class="my-ads-container-btn">
+          <button class="my-ads-btn" type="submit" aria-label="Додати в обране">
+            <svg class="my-ads-icon-btn " width="14" height="14">
+              <use href="./images/sprite-min.svg#icon-heart-like"></use>
+            </svg>
+          </button>
+          <button class="my-ads-btn my-ads-btn-edit" type="button" aria-label="Редагувати оголошення">
+            <svg class="my-ads-icon-btn " width="14" height="14">
+              <use href="./images/sprite-min.svg#icon-edit"></use>
+            </svg>
+          </button>
+          <button class="my-ads-btn my-ads-btn-open-card" type="button" aria-label="Відкрити товар">
+            <svg class="my-ads-icon-btn" width="14" height="14">
+              <use href="./images/sprite-min.svg#icon-full-scrin"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="my-ads-card-content">
+        <h2 class="my-ads-title">{{title}}</h2>
+        <p class="my-ads-price">{{price}} грн</p>
+      </div>
+    </article>
+    {{/each}}
+  </div>
+</section>

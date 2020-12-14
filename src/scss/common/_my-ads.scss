@@ -1,0 +1,163 @@
+.container {
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (max-width: $tablet-lower) {
+    width: 320px;
+  }
+
+  // @media screen and (min-width: $tablet-upper) {
+  //   width: 768px;
+  // }
+
+  // @media screen and (max-width: 1080px) {
+  //   width: 1280px;
+  // }
+}
+
+.my-ads {
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+.my-ads-section-title {
+  font-family: $montserrat-font-fam;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 1.25;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+
+  margin-bottom: 27px;
+  padding-left: 52px;
+
+  color: $primary-text-color;
+
+  @media screen and (min-width: $tablet-upper) {
+    margin-bottom: 15px;
+  }
+}
+
+.my-ads-container {
+  @media screen and (min-width: $tablet-upper) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.my-ads-card {
+  background-color: cadetblue;
+  max-width: 290px;
+  background: $white-color;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  &:not(:last-child) {
+    @media screen and (max-width: $tablet-lower) {
+      margin-bottom: 20px;
+    }
+
+    @media screen and (min-width: $tablet-upper) {
+      margin-right: 20px;
+    }
+  }
+}
+
+.my-ads-img {
+  display: block;
+  max-width: 290px; //
+  width: 100%;
+  height: 275px;
+  object-fit: cover;
+  @media screen and (min-width: $tablet-upper) {
+    width: 352px;
+  }
+
+  @media screen and (min-width: $desctop-upper) {
+    width: 295px;
+  }
+}
+
+.my-ads-card-content {
+  padding: 20px;
+}
+
+.my-ads-title {
+  margin-bottom: 4px;
+  margin-top: 0;
+
+  font-family: $roboto-font-family;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.07em;
+
+  color: $black-color;
+}
+
+.my-ads-price {
+  font-family: $roboto-font-family;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.04em;
+
+  color: $primary-text-color;
+}
+
+//Стили для ховера с кнопками
+
+.my-ads-img-container {
+  position: relative;
+  overflow: hidden;
+  background-color: cadetblue;
+}
+
+.my-ads-icon-btn {
+  fill: $white-color;
+}
+
+.my-ads-container-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  transform: translateY(-100%);
+  transition: $cubic;
+  transition-property: opacity, transform;
+}
+
+.my-ads-card:hover .my-ads-container-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.my-ads-btn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: transparent;
+  border: transparent;
+  fill: $white-color;
+}
+
+.my-ads-btn-edit {
+  top: 42px;
+}
+
+.my-ads-btn-open-card {
+  top: 241px;
+}

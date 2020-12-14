@@ -3,7 +3,7 @@ import templateCard from '../templates/card.hbs';
 import { fetchCall } from './fetch/fetchCall';
 import { fetchGetFavorites } from './fetch/fetchGetFavorites';
 
-const showMyAd = document.querySelector("[data-dropdown-ad]");
+//const showMyAd = document.querySelector("[data-dropdown-ad]");
 const showMyFavourites = document.querySelector("[data-dropdown-favourites]");
 
 showMyFavourites.addEventListener('click', showFavourites);
