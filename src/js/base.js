@@ -58,7 +58,7 @@ fetchCall(API_OLX, 1).then(console.log)
 fetchCall(API_OLX, 2).then(console.log)
 fetchCall(API_OLX, 3).then(console.log)
 // fetchPostCall(API_OLX, dataField).then(console.log)
-fetchPatchCall(API_OLX, dataField, cardID).then(console.log)
+// fetchPatchCall(API_OLX, dataField, cardID).then(console.log) /**изменяет мой товар */
 // fetchDeleteCallID(API_OLX, cardID).then(console.log)
 // fetchGetUser(API_OLX).then(console.log) /**дает данные user по 'key'  */
 // fetchGetUserID(API_OLX, userId).then(console.log).catch(console.log) /**дает данные user по 'id'  */
@@ -70,7 +70,7 @@ fetchPostAddFavoriteID(API_OLX,cardID).then(console.log) /*добавляет в
 // fetchGetSpecificCategory(API_OLX, myCategory).then(console.log) /**находит определённую категорию */
 // fetchAuthenRefresh(API_OLX).then(console.log) /*обновляет 'key','refreshToken','sid'*/
 // fetchLogout(API_OLX).then(console.log) /*выход за Аккаунту и удаляет 'key'*/
-// fetchCall(API_OLX, 2).then(render => document.querySelector('.cards').innerHTML = templateCard(render.trade)) /**тестовый фич для слайдера и т.д. */
+fetchCall(API_OLX, 2).then(render => document.querySelector('.cards').innerHTML = templateCard(render.trade)) /**тестовый фич для слайдера и т.д. */
 
 /************************************************************************ ниже експерементальный код */
 /*ещё не работает, должно сабмитить поля с созданой карточки*/
