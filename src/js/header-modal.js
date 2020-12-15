@@ -14,9 +14,6 @@ const modalCreateAnAd = document.querySelector(`[data-create-ad]`)
 const clouseModalCreateAnAd = document.querySelector(`[data-clouse-button-create-ad]`)
 const sideNavDesctop = document.querySelector(`#sidenav-desctop`)
 const changeCategoryForCreateAnAd = document.querySelector(`#categori-product-add-list`)
-// const openModalRegistrartion = document.querySelector(`[data-modal-open-registration]`)
-// const modalRegistration = document.querySelector(`[data-menu-registration]`)
-// const clouseModalRegistration = document.querySelector(` [data-clouse-button-modal-registration]`)
 const sidenavModalRegistrartion = document.querySelector(`[data-sidenav-open-registration]`)
 const modalSerch = document.querySelector(`.js-modal-search`)
 const btnOpenModalSerch = document.querySelector(`.js-btn-open-modal-serch`)
@@ -24,7 +21,11 @@ const btnClouseModalSerch = document.querySelector(`.js-btn-clouse-modal-serch`)
 const btnOpenCreateAnAdMobile = document.querySelector(`.js-create-an-ad-modal-mobile`)
 const DesctopCategory = document.querySelector(`#sidenav-desctop`)
 const mobileCategory = document.querySelector(`#sidenav-mobile`)
-// data-sidenav-open-registration
+
+// const openModalRegistrartion = document.querySelector(`[data-modal-open-registration]`)
+// const modalRegistration = document.querySelector(`[data-menu-registration]`)
+// const clouseModalRegistration = document.querySelector(` [data-clouse-button-modal-registration]`)
+
 // открытие - закрытие модалок Хедера
 function onOpenModalHeader(btn, modal) {
         btn.addEventListener(`click`, openModal)
@@ -39,11 +40,13 @@ onOpenModalHeader(clouseSideNav, mobileMenuRef)
 onOpenModalHeader(openCreateAnAd, modalCreateAnAd)
 onOpenModalHeader(btnOpenCreateAnAdMobile, modalCreateAnAd)
 onOpenModalHeader(clouseModalCreateAnAd, modalCreateAnAd)
+onOpenModalHeader(btnOpenModalSerch, modalSerch) 
+onOpenModalHeader(btnClouseModalSerch, modalSerch)
+
 // onOpenModalHeader(openModalRegistrartion, modalRegistration)
 // onOpenModalHeader(clouseModalRegistration, modalRegistration)
 // onOpenModalHeader(sidenavModalRegistrartion,modalRegistration)
-onOpenModalHeader(btnOpenModalSerch, modalSerch) 
-onOpenModalHeader(btnClouseModalSerch, modalSerch)
+
  // sidenav(Desctop) рендер категорий
 fetchCategory(API_OLX).then(responce => appendSideNavDesctop(responce))
 function appendSideNavDesctop(cat) {
@@ -72,4 +75,5 @@ function SerchItemsIsCategory(evt) {
         const category = `${evt.target.dataset.category}`
         console.log(category);
         fetchGetSpecificCategory(API_OLX, category).then(responce => console.log(responce))
+        history.pushState(null, null, evt.target.dataset.category);
         }

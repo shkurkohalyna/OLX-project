@@ -251,8 +251,10 @@
   margin: 15px;
 
   @media screen and (min-width: $tablet-upper) {
-    margin: 163px 22px;
-    padding: 55px;
+    max-width: 724px;
+    margin-top: 163px;
+    margin-left: auto;
+    margin-right: auto;
   }
   @media screen and(min-width: $desctop-upper) {
     margin-left: auto;
