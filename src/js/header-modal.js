@@ -1,5 +1,6 @@
 import { API_OLX } from './url';
 import fetchCategory from './fetch/fetchCategory';
+import {fetchGetSpecificCategory} from './fetch/fetchGetSpecificCategory'
 import MarkupSideNavDesctop from '../templates/header-sidenav-desctop.hbs'
 import MarkupSidenavMobile from '../templates/header-sidenav-mobile.hbs'
 import MarkupModalCreateAnAdCategory from '../templates/header-create-an-ad-category.hbs'
@@ -21,9 +22,10 @@ const modalSerch = document.querySelector(`.js-modal-search`)
 const btnOpenModalSerch = document.querySelector(`.js-btn-open-modal-serch`)
 const btnClouseModalSerch = document.querySelector(`.js-btn-clouse-modal-serch`)
 const btnOpenCreateAnAdMobile = document.querySelector(`.js-create-an-ad-modal-mobile`)
+const DesctopCategory = document.querySelector(`#sidenav-desctop`)
+const mobileCategory = document.querySelector(`#sidenav-mobile`)
 // data-sidenav-open-registration
 // открытие - закрытие модалок Хедера
-console.log();
 function onOpenModalHeader(btn, modal) {
         btn.addEventListener(`click`, openModal)
         function openModal() {
@@ -31,12 +33,12 @@ function onOpenModalHeader(btn, modal) {
                 body.classList.toggle(`is-open-modal`)
         }
 }
+
 onOpenModalHeader(openSideNav, mobileMenuRef)
 onOpenModalHeader(clouseSideNav, mobileMenuRef)
 onOpenModalHeader(openCreateAnAd, modalCreateAnAd)
 onOpenModalHeader(btnOpenCreateAnAdMobile, modalCreateAnAd)
 onOpenModalHeader(clouseModalCreateAnAd, modalCreateAnAd)
-
 // onOpenModalHeader(openModalRegistrartion, modalRegistration)
 // onOpenModalHeader(clouseModalRegistration, modalRegistration)
 // onOpenModalHeader(sidenavModalRegistrartion,modalRegistration)
@@ -60,3 +62,14 @@ function appendchangeCategoryForCreateAnAd(cat) {
 }
 
 
+// Фильтр по кнопкам категорий
+DesctopCategory.addEventListener(`click`, SerchItemsIsCategory)
+mobileMenuRef.addEventListener(`click`, SerchItemsIsCategory)
+function SerchItemsIsCategory(evt) {         
+        if (evt.target.nodeName !== `LI`) {
+        return
+}
+        const category = `${evt.target.dataset.category}`
+        console.log(category);
+        fetchGetSpecificCategory(API_OLX, category).then(responce => console.log(responce))
+        }
