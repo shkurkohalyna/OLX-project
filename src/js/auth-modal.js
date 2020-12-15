@@ -22,7 +22,8 @@ export const isLogInRefs = document.querySelectorAll('.is-login');
 export function changeElem() {
     isLogInRefs.forEach(el => { el.classList.toggle('is-login') });
 }
-changeElem();
+if (localStorage.getItem('key') === null)
+{changeElem();}
 
 // Відкрити і закрити модальне вікно!
 authRefs.regestryBtn.addEventListener('click', openModal);

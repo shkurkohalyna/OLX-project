@@ -4,7 +4,6 @@ import { fetchLogout } from './fetch/fetchLogout';
 import { changeElem } from './auth-modal';
 import { isLogInRefs } from './auth-modal';
 import {resetForm} from './auth-modal'
-// import { locale } from 'core-js';
 
 const refs = getRefs();
 
@@ -13,9 +12,12 @@ refs.openPopupBtnLogoutTablet.addEventListener('click', onTogglePopUp);
 refs.closePopupBtnLogout.addEventListener('click', onTogglePopUp);
 refs.cancelPopupBtnLogout.addEventListener('click', onTogglePopUp);
 refs.exitAccount.addEventListener('click', onExitAccount);
+refs.backdrop.addEventListener("click", onCloseBackdropClick);
 
+ 
 function onTogglePopUp() {
   refs.backdropPopupLogout.classList.toggle('is-hidden');
+ 
 }
 
 //Выход из аккаунта
@@ -33,3 +35,16 @@ async function onExitAccount() {
  
 }
 
+//Закрытие по клику на бэкдроп и esc
+function onCloseBackdropClick(evt) {
+  if (evt.currentTarget === evt.target ) {
+    onTogglePopUp()
+  }
+}
+
+// function onCloseEsc(evt) {
+//   const ESC_KEY_CODE = "Escape";
+//   if (evt.code === ESC_KEY_CODE) {
+//     onTogglePopUp()
+//   }
+// }

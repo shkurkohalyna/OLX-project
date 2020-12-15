@@ -5,7 +5,10 @@ export default function getRefs (){
     closePopupBtnLogout: document.querySelector('[data-popup-close]'),
     cancelPopupBtnLogout: document.querySelector('[data-popup-cancel]'),
     backdropPopupLogout: document.querySelector('[data-popup]'),
-    myAdsCardRender: document.querySelector('.my-ads-rend'), 
+    backdrop: document.querySelector('[data-popup]'),
+    myAdsCardRender: document.querySelector('.sidenav__dropdawn-content--text'), 
+    myAds: document.querySelector('.cards'),
+    showMyAds: document.querySelector("[data-dropdown-ad]"),
     exitAccount: document.querySelector('[data-exit]'), 
     btnSubmitCreate: document.querySelector('.create-an-ad-modal__submit-btn'),
   }

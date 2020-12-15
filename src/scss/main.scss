@@ -12,9 +12,10 @@
 /*модалки*/
 @import './modals/modal-search';
 @import './common/auth-modal';
-@import './common/logout-popup.scss';
+@import './common/logout-popup';
 @import './modals/modal_card_item';
 
 //card
 @import './common/card.scss';
-
+@import './common/my-ads';
+@import './common/no-ads';
