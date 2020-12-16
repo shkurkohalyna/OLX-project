@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Artiss90/OLX-team-project"
+    "url": "git+https://github.com/shkurkohalyna/OLX-team-project"
   },
   "keywords": [],
   "author": "Artiss90",
   "bugs": {
-    "url": "https://github.com/Artiss90/OLX-team-project"
+    "url": "https://github.com/shkurkohalyna/OLX-team-project"
   },
-  "homepage": "https://Artiss90.github.io/OLX-team-project",
+  "homepage": "https://shkurkohalyna.github.io/OLX-team-project",
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/plugin-proposal-class-properties": "^7.10.4",

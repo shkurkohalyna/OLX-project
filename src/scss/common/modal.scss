@@ -1,334 +1,37 @@
-// .backdrop {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   padding: 15px 15px 30px 15px;
-//   overflow-y: scroll;
-//   background: $backdrop-color;
-
-//   opacity: 1;
-//   transition: opacity $transition;
-
-//   @media screen and (min-width: $tablet-upper) {
-//     padding: 165px 20px;
-//   }
-
-//   @media screen and (min-width: $desctop-upper) {
-//     padding: 125px 210px;
-//   }
-// }
-
-// .add-card__modal {
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-//   padding-bottom: 60px;
-//   padding-top: 54px;
-//   width: 290px;
-//   background-color: $white-color;
-
-//   font-family: $roboto-font-family;
-//   font-style: normal;
-//   font-weight: 500;
-//   letter-spacing: 0.02em;
-
-//   @media screen and (min-width: $phone) {
-//     padding-left: 20px;
-//     padding-right: 19px;
-//     width: 290px;
-//   }
-
-//   @media screen and (min-width: $tablet-upper) {
-//     padding-left: 53px;
-//     padding-right: 55px;
-//     width: 724px;
-//   }
-
-//   @media screen and (min-width: $desctop-upper) {
-//     padding-left: 105px;
-//     padding-right: 105px;
-//     width: 861px;
-//   }
-// }
-
-// .icon-btn {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-
-//   position: absolute;
-//   top: 15px;
-//   right: 15px;
-
-//   width: 24px;
-//   height: 24px;
-
-//   border: none;
-//   background-color: $white-color;
-
-//   cursor: pointer;
-
-//   & .material-icons {
-//     font-weight: 500;
-//   }
-
-//   @media screen and (min-width: $tablet-upper) {
-//     top: 25px;
-//     right: 25px;
-//   }
-// }
-
-// .add-card__title {
-//   margin-bottom: 20px;
-
-//   font: 20px bold;
-//   line-height: 1.15;
-
-//   @media screen and (min-width: $tablet-upper) {
-//     margin-bottom: 30px;
-//   }
-// }
-
-// .add-card__item {
-//   margin-bottom: 20px;
-
-//   &:last-child {
-//     margin-bottom: 30px;
-
-//     @media screen and (min-width: $tablet-upper) {
-//       margin-bottom: 40px;
-//     }
-//   }
-// }
-
-// .add-card__label {
-//   width: 100%;
-//   font-size: 14px;
-//   line-height: 1.14;
-
-//   @media screen and (min-width: $tablet-upper) {
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//   }
-// }
-
-// .add-card__category {
-//   display: inline-block;
-//   margin-bottom: 10px;
-
-//   @media screen and (min-width: $tablet-upper) {
-//     margin-bottom: 0;
-//   }
-// }
-
-// .add-card__input {
-//   padding: 21px 20px 20px 23px;
-
-//   font-weight: 500;
-//   font-size: 14px;
-//   line-height: 1.14;
-//   letter-spacing: 0.02em;
-
-//   border: 1px solid $primary-text-gray;
-//   cursor: text;
-
-//   &.select-input {
-//     cursor: pointer;
-//   }
-
-//   @media screen and (max-width: $phone) {
-//     width: 100%;
-//   }
-
-//   @media screen and (min-width: $tablet-upper) {
-//     width: 458px;
-//   }
-
-//   @media screen and (min-width: $desctop-upper) {
-//     width: 440px;
-//   }
-// }
-
-// .add-card__input.description {
-//   padding: 7px 10px 8px;
-//   resize: vertical;
-//   overflow: auto;
-
-//   font-weight: 300;
-//   font-size: 12px;
-//   line-height: 1.17;
-// }
-
-// .notice {
-//   position: relative;
-
-//   & .add-card__input::-webkit-inner-spin-button {
-//     display: none;
-//   }
-
-//   & .icon-btn {
-//     top: 43px;
-//     right: 15px;
-
-//     @media screen and (min-width: $tablet-upper) {
-//       top: 17px;
-//       right: 15px;
-//     }
-//   }
-// }
-
-// .notice-label {
-//   position: absolute;
-//   bottom: 0;
-//   left: 23px;
-
-//   opacity: 1;
-//   transition: opacity $transition 250ms;
-
-//   color: $primary-text-gray;
-
-//   .notice:focus-within &,
-//   .notice .add-card__input:not(:placeholder-shown) + & {
-//     opacity: 0;
-//   }
-
-//   @media screen and (min-width: $tablet-upper) {
-//     left: 181px;
-//     bottom: 20px;
-//   }
-
-//   @media screen and (min-width: $desctop-upper) {
-//     left: 234px;
-//     bottom: 20px;
-//   }
-// }
-
-// .price {
-//   position: absolute;
-//   left: 55px;
-//   bottom: 0;
-//   color: $primary-text-gray;
-
-//   transform: translate(0, 0);
-//   transition: color $transition, transform $transition;
-
-//   .notice:focus-within &,
-//   .notice .add-card__input:not(:placeholder-shown) ~ & {
-//     transform: translate(100%, 0);
-//     right: 33px;
-//     color: $primary-text-color;
-//   }
-
-//   @media screen and (min-width: $tablet-upper) {
-//     left: 213px;
-//     bottom: 20px;
-//   }
-
-//   @media screen and (min-width: $desctop-upper) {
-//     left: 265px;
-//     bottom: 20px;
-//   }
-// }
-
-// .submit-btn,
-// .user__button {
-//   width: 100%;
-//   padding: 20px 0;
-
-//   font-size: 12px;
-//   line-height: 1.17;
-//   text-align: center;
-//   text-transform: uppercase;
-
-//   color: $white-color;
-//   background-color: $orange-color;
-//   border: none;
-
-//   cursor: pointer;
-
-//   &.reset {
-//     margin-left: 15px;
-//     color: $primary-text-color;
-//     background-color: $white-color;
-//     border: 1px solid $secondary-text-gray;
-
-//     @media screen and (min-width: $tablet-upper) {
-//       margin-left: 20px;
-//     }
-//   }
-
-//   @media screen and (min-width: $tablet-upper) {
-//     margin-left: 158px;
-//     width: 265px;
-//   }
-
-//   @media screen and (min-width: $desctop-upper) {
-//     margin-left: 211px;
-//     width: 210px;
-//   }
-// }
-
-// .photo-list {
-//   display: flex;
-//   flex-wrap: wrap;
-//   margin: -5px;
-
-//   @media screen and (min-width: $tablet-upper) {
-//     margin: 0;
-//     width: 458px;
-//     flex-wrap: nowrap;
-//   }
-
-//   @media screen and (min-width: $desctop-upper) {
-//     width: 440px;
-//     flex-wrap: nowrap;
-//   }
-// }
-
-// .photo-item {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-
-//   margin: 5px;
-//   width: calc((100% - 3 * 10px) / 3);
-//   height: 46px;
-
-//   background-color: #f5f6fb;
-
-//   @media screen and (min-width: $tablet-upper) {
-//     width: 84px;
-//     margin: 0;
-//     margin-right: 10px;
-
-//     &:last-child {
-//       margin-right: 0;
-//     }
-//   }
-// }
-
-// .photo-input {
-//   display: none;
-// }
-
-// .photo-label {
-//   display: flex;
-//   align-items: center;
-//   text-align: center;
-
-//   font-size: 22px;
-//   line-height: 1.18;
-//   letter-spacing: 0.02em;
-
-//   color: $primary-text-gray;
-//   cursor: pointer;
-// }
-
-// .submit-btn {
-//   font-weight: 500;
-//   text-transform: none;
-// }
+.backdrop-add {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 15px 15px 30px 15px;
+  overflow-y: scroll;
+  background-color: $backdrop-color;
+
+  opacity: 1;
+  transition: opacity $transition;
+
+  @media screen and (min-width: $tablet-upper) {
+    padding: 165px 20px;
+  }
+
+  @media screen and (min-width: $desctop-upper) {
+    padding: 125px 210px;
+  }
+}
+.overlay-add {
+  background-color: $backdrop-color;
+  width: 100%;
+  height: 100%;
+}
+.incorrect-input {
+  @media screen and( min-width: $tablet-upper) {
+    position: absolute;
+    top: 3.5em;
+  }
+
+  @media screen and(min-width: $desctop-upper) {
+    position: absolute;
+    top: 3.5em;
+  }
+}

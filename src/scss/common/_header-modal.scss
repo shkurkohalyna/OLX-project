@@ -84,8 +84,8 @@
     order: 6;
   }
 }
-.sideNavDesctop__box {
-}
+// .sideNavDesctop__box {
+// }
 .sideNavDesctop__text {
   display: inline-block;
   text-transform: capitalize;
@@ -276,8 +276,8 @@
   height: 14px;
 }
 // блок с инпутами
-.create-an-ad-modal__title {
-}
+// .create-an-ad-modal__title {
+// }
 .create-an-ad-modal__title-text {
   display: block;
   font-weight: 500;
@@ -332,6 +332,7 @@
   display: block;
   background-color: $bg-gray-color;
   text-align: center;
+  opacity: 0;
   @media screen and (max-width: $tablet-lower) {
     width: 100%;
   }
@@ -346,6 +347,12 @@
     width: 78px;
     height: 50px;
   }
+  &.active {
+    opacity: 1;
+  }
+}
+.error_modal {
+  border-color: red;
 }
 
 .create-an-ad-modal__add-image {
