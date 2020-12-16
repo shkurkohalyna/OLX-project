@@ -1,37 +1,33 @@
-import Splide from '@splidejs/splide';
+import Siema from 'siema';
 
-document.addEventListener( 'DOMContentLoaded', function () {
-	new Splide( '.splide', {
-        start: 2,
-        pagination: false,
-        arrows: true,
-        direction: 'ltr',
-        classes: {
-            arrows: 'splide__arrows your-class-arrows',
-            arrow : 'splide__arrow your-class-arrow',
-            prev  : 'splide__arrow--prev your-class-prev',
-            next  : 'splide__arrow--next your-class-next',
-        },
-        perPage: 4,
-        perMove: 1,
-        gap: 20,
-		breakpoints: {
-			1279: {
-				perPage: 2,
-            },
-            767: {
-                destroy: true, // or 'completely'
-            },
-		}
-	} ).mount();
-} );
-
-import { API_OLX } from './url';
-import templateCategory from '../templates/category.hbs';
-import templateCatSlider from '../templates/category-slider.hbs';
-import { fetchGetSpecificCategory } from './fetch/fetchGetSpecificCategory';
-import fetchCategory from './fetch/fetchCategory';
-import { fetchCall } from './fetch/fetchCall';
-
-// fetchCategory(API_OLX).then(render => document.querySelector('.category-section').innerHTML = templateCategory(render))
-// fetchCall(API_OLX, 2).then(render => document.querySelector('.slider').innerHTML = templateCatSlider(render))
+function onInitCallback() {
+    console.log('Siema initialised bro :)');
+  }
+  
+  function onChangeCallback() {
+    console.log(`The index of current slide is: ${this.currentSlide}`);
+  }
+  
+  const mySiema = new Siema({
+    selector: '.slider',
+    duration: 400,
+    easing: 'ease-out',
+    perPage: {
+        768: 2, // 2 items for viewport wider than 768px
+        1280: 4 // 4 items for viewport wider than 1280px
+    },
+    startIndex: 0,
+    draggable: true,
+    multipleDrag: true,
+    threshold: 20,
+    loop: false,
+    rtl: false,
+    onInit: onInitCallback,
+    onChange: onChangeCallback,
+  });
+  
+//   const prev = document.querySelector('.prev');
+//   const next = document.querySelector('.next');
+  
+//   prev.addEventListener('click', () => mySiema.prev());
+//   next.addEventListener('click', () => mySiema.next());
