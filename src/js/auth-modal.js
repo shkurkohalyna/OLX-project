@@ -1,12 +1,13 @@
 import  { API_OLX } from './url';
 import { fetchRegistration } from './fetch/fetchRegistration';
 import { fetchAuthenticationLogin } from './fetch/fetchAuthenticationLogin';
+import { fetchAuthenGoogle } from './fetch/fetchAuthenGoogle';
 
 const authRefs = {
 regestryBtn: document.querySelector(`[data-modal-open-registration]`),
 sideNavRegBtn: document.querySelector(`[data-sidenav-open-registration]`),
 authModal: document.querySelector('[data-auth-modal]'),
-overlay: document.querySelector('.overlay'),
+overlay: document.querySelector('.auth-overlay'),
  closeModalBtn: document.querySelector('[data-auth-modal-close]'),
  authForm: document.querySelector('.auth-form'),
  emailInput: document.getElementById('Email'),
@@ -15,6 +16,7 @@ overlay: document.querySelector('.overlay'),
  passwordError: document.querySelector('.password-error'),
  signInBtn: document.querySelector('.signin'),
  signUpBtn: document.querySelector('.signup'),
+ googleBtn: document.querySelector('.button-google'),
 };
 
 // Змінює класс .is-login 
