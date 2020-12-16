@@ -43,34 +43,34 @@ const searchFind = 'Developer';
 const myCategory = 'transport';
 
 /********************************************** пример использования всех наших фетчей */
-fetchCategory(API_OLX).then(console.log)
+// fetchCategory(API_OLX).then(console.log)
 // fetchRegistration(API_OLX, newUser).then(console.log)
-fetchAuthenticationLogin(API_OLX, newUser).then(response => {
-    save('key', response.accessToken)
-    save('refreshToken', response.refreshToken)
-    save('sid', response.sid)
-}
-    )
-fetchAuthenticationLogin(API_OLX, newUser).then(response => { save('UserToken', response) }) 
+// fetchAuthenticationLogin(API_OLX, newUser).then(response => {
+//     save('key', response.accessToken)
+//     save('refreshToken', response.refreshToken)
+//     save('sid', response.sid)
+// }
+//     )
+// fetchAuthenticationLogin(API_OLX, newUser).then(response => { save('UserToken', response) }) 
 // console.log(load('UserToken').user.id);
 // fetchAuthenGoogle(API_OLX).then(console.log) /**ещё работает */
-fetchCall(API_OLX, 1).then(console.log)
-fetchCall(API_OLX, 2).then(console.log)
-fetchCall(API_OLX, 3).then(console.log)
+// fetchCall(API_OLX, 1).then(console.log)
+// fetchCall(API_OLX, 2).then(console.log)
+// fetchCall(API_OLX, 3).then(console.log)
 // fetchPostCall(API_OLX, dataField).then(console.log)
 // fetchPatchCall(API_OLX, dataField, cardID).then(console.log) /**изменяет мой товар */
 // fetchDeleteCallID(API_OLX, cardID).then(console.log)
 // fetchGetUser(API_OLX).then(console.log) /**дает данные user по 'key'  */
 // fetchGetUserID(API_OLX, userId).then(console.log).catch(console.log) /**дает данные user по 'id'  */
 // fetchGetFavorites(API_OLX).then(console.log)
-fetchPostAddFavoriteID(API_OLX,cardID).then(console.log) /*добавляет в избраное*/
+// fetchPostAddFavoriteID(API_OLX,cardID).then(console.log) /*добавляет в избраное*/
 // fetchDeleteFavoriteID(API_OLX,cardID).then(console.log) /*удаляет из избраного*/
 // fetchGetOwn(API_OLX).then(console.log)
 // fetchGetFind(API_OLX, searchFind).then(console.log)
 // fetchGetSpecificCategory(API_OLX, myCategory).then(console.log) /**находит определённую категорию */
 // fetchAuthenRefresh(API_OLX).then(console.log) /*обновляет 'key','refreshToken','sid'*/
 // fetchLogout(API_OLX).then(console.log) /*выход за Аккаунту и удаляет 'key'*/
-fetchCall(API_OLX, 2).then(render => document.querySelector('.cards').innerHTML = templateCard(render.trade)) /**тестовый фич для слайдера и т.д. */
+// fetchCall(API_OLX, 2).then(render => document.querySelector('.cards').innerHTML = templateCard(render.trade)) /**тестовый фич для слайдера и т.д. */
 
 /************************************************************************ ниже експерементальный код */
 /*ещё не работает, должно сабмитить поля с созданой карточки*/
