@@ -4,4 +4,4 @@ import './js/header-modal';
 // import './js/modal';
 // import './js/auth-modal';
 import './js/logout-popup';
-import './js/route'
+
