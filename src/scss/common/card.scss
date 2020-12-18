@@ -21,6 +21,7 @@
   @media screen and (min-width: 768px) {
     margin: 0;
     flex-basis: calc((100% - 2 * 20px) / 2);
+
     margin: 10px;
   }
 
@@ -106,6 +107,22 @@
     color: $primary-text-color;
     text-decoration: line-through;
     padding-right: 7px;
+  }
+}
+
+.material-icons {
+  color: white;
+}
+
+.card__picture {
+  object-fit: cover;
+  // object-position: center center;
+
+  @media screen and (min-width: $tablet-upper) {
+    height: calc((100vw - 20px) / 2 * 275 / 352);
+  }
+  @media screen and (min-width: $desctop-upper) {
+    height: calc((100vw - 20px) / 4 * 275 / 295);
   }
 }
 
