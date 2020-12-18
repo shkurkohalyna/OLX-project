@@ -9,6 +9,7 @@ export default function getRefs (){
     myAdsCardRender: document.querySelector('.sidenav__dropdawn-content--text'), 
     myAds: document.querySelector('.cards'),
     showMyAds: document.querySelector("[data-dropdown-ad]"),
+    showMyAdsTabMob: document.querySelector("[data-dropdown-ad-tm]"), 
     exitAccount: document.querySelector('[data-exit]'), 
     btnSubmitCreate: document.querySelector('.create-an-ad-modal__submit-btn'),
   }

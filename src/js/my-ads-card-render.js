@@ -10,6 +10,7 @@ import noAdsTpl from '../templates/no-ads.hbs';
 const refs = getRefs();
 
 refs.showMyAds.addEventListener('click', onRenderMyAdsCard);
+refs.showMyAdsTabMob.addEventListener('click', onRenderMyAdsCard);
 
 async function onRenderMyAdsCard() {
   //Код тот что должен быть
