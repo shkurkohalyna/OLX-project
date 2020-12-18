@@ -20,6 +20,7 @@ import { fetchPostCall } from './fetch/fetchPostCall'; /*ошибка серве
 import { fetchPatchCall } from './fetch/fetchPatchCall';/**немогу достучатся, скорей всего нужно применять на товаре созданым в своей учётке*/
 import { fetchDeleteCallID } from './fetch/fetchDeleteCallID';
 import { fetchAuthenRefresh } from './fetch/fetchAuthenRefresh';
+import {cards} from './cards.js'
 
 
 /***************************примеры данных для фетч */
@@ -71,6 +72,9 @@ const myCategory = 'transport';
 // fetchAuthenRefresh(API_OLX).then(console.log) /*обновляет 'key','refreshToken','sid'*/
 // fetchLogout(API_OLX).then(console.log) /*выход за Аккаунту и удаляет 'key'*/
 // fetchCall(API_OLX, 2).then(render => document.querySelector('.cards').innerHTML = templateCard(render.trade)) /**тестовый фич для слайдера и т.д. */
+
+
+
 
 /************************************************************************ ниже експерементальный код */
 /*ещё не работает, должно сабмитить поля с созданой карточки*/
