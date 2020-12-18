@@ -7,17 +7,21 @@ import {resetForm} from './auth-modal'
 
 const refs = getRefs();
 
-refs.openPopupBtnLogout.addEventListener('click', onTogglePopUp);
-refs.openPopupBtnLogoutTablet.addEventListener('click', onTogglePopUp);
+refs.openPopupBtnLogout.addEventListener('click', openPopupLogoutModal);
+refs.openPopupBtnLogoutTablet.addEventListener('click', openPopupLogoutModal);
 refs.closePopupBtnLogout.addEventListener('click', onTogglePopUp);
 refs.cancelPopupBtnLogout.addEventListener('click', onTogglePopUp);
 refs.exitAccount.addEventListener('click', onExitAccount);
-refs.backdrop.addEventListener("click", onCloseBackdropClick);
+refs.backdrop.addEventListener('click', onCloseBackdropClick);
+refs.backdrop.addEventListener('click', onCloseBackdropClick);
 
- 
+function openPopupLogoutModal() {
+  onTogglePopUp()
+  document.addEventListener('keyup', onCloseEsc);
+} 
 function onTogglePopUp() {
   refs.backdropPopupLogout.classList.toggle('is-hidden');
- 
+  document.removeEventListener('keyup', onCloseEsc);
 }
 
 //Выход из аккаунта
@@ -37,14 +41,14 @@ async function onExitAccount() {
 
 //Закрытие по клику на бэкдроп и esc
 function onCloseBackdropClick(evt) {
-  if (evt.currentTarget === evt.target ) {
+  if (evt.currentTarget === evt.target) {
     onTogglePopUp()
   }
 }
 
-// function onCloseEsc(evt) {
-//   const ESC_KEY_CODE = "Escape";
-//   if (evt.code === ESC_KEY_CODE) {
-//     onTogglePopUp()
-//   }
-// }
+function onCloseEsc(evt) {
+  const ESC_KEY_CODE = "Escape";
+  if (evt.code === ESC_KEY_CODE) {
+    onTogglePopUp()
+  }
+}

@@ -37,8 +37,8 @@ import {cards} from './cards.js'
 const cardID = '5fd394e86da6ab0017dbf5d4';
 // const userId = load('UserToken').user.id;
 const newUser = {
-    "email": "artiss@example.com",
-    "password": "qwerty2020"
+    "email": "artiss2@example.com",
+    "password": "Qwerty2020"
 };
 const searchFind = 'Developer';
 const myCategory = 'transport';
