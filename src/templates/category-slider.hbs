@@ -1,24 +1,42 @@
-{{#each this}}
-<div class="category">
-    <a class="category-name">{{category}}</a>
-    <a class="category-show-all">Дивитися всі</a>
-</div>
+ {{!-- {{#each this}}
+<div class="item-card">
+  <article>
+    <a href="#" class="link-card">
+      <div class="container-card">
+        <img class="picture-card" {{#if imageUrls}} src='{{imageUrls}}' {{else}}
+          src="../images/photo_is_coming_soon.jpg" {{/if}} alt="{{title}}">
+        <div class="position-card">
 
-<div class="splide" id="card-slider">
-<div class="splide__arrows">
-    <button class="splide__arrow splide__arrow--prev">
-        <svg class="pre-btn">
-            <use href="./images/sprite.svg#icon-prev-btn"></use>
-        </svg>
-    </button>
-    <button class="splide__arrow splide__arrow--next">
-        <svg class="next-btn">
-            <use href="./images/sprite.svg#icon-next-btn"></use>
-        </svg>
-    </button>
-    </div>
-<div class="splide__track">
-{{>./cardset}}
+          <div class="container-icons">
+            <span data-like data-id="{{_id}}" class=" material-icons card__icons">favorite_border</span>
+          </div>
+          <div class="container-icons">
+            <span data-create data-id="{{_id}}" class=" material-icons card__icons authorized">create</span>
+          </div>
+          <div class="container-icons">
+            <span data-open data-id="{{_id}}" class="material-icons card__icons">fullscreen</span>
+          </div>
+
+        </div>
+      </div>
+      <div class="description-card">
+        <h4 class="title-card">{{title}}</h4>
+        <p>{{#if oldPrice}}<span class="card__price del"><span
+              class="price-card old">{{oldPrice}}</span></span>{{/if}}<span class="price-card new">{{price}}
+            грн</span></p>
+      </div>
+
+    </a>
+  </article>
 </div>
-</div>
-{{/each}}
+  {{/each}} --}}
+{{!-- <button class="prev">
+      <svg class="pre-btn">
+        <use href="./images/sprite.svg#icon-prev-btn"></use>
+      </svg>
+</button>
+<button class="next">
+      <svg class="next-btn">
+        <use href="./images/sprite.svg#icon-next-btn"></use>
+      </svg>
+</button> --}}
