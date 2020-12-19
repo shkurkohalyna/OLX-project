@@ -1,68 +1,95 @@
-<button type="button" class="user__button create-ad-js" data-modal-open>Створити оголошення!</button>
-<div class="backdrop" data-modal>
-    <div class="add-card__modal">
-        <button class="icon-btn">
-            <span class="material-icons" data-modal-close>clear</span>
+<div id="create-an-ad-modal" class="create-an-ad-modal backdrop-add is-hidden" data-create-ad>
+
+    <div class="create-an-ad-modal__box container overlay-add">
+        <button type="button" class="create-an-ad-modal__menu-clouse" data-clouse-button-create-ad>
+            <svg aria-label="закрыть окно" class="create-an-ad-modal__icon-clouse">
+                <use href="./images/sprite-min.svg#icon-menu-clouse" widrh="14" height="14">
+                </use>
+            </svg>
         </button>
-        <p class="add-card__title">Додати оголошення</p>
-        <form class="add-card__form">
-            <ul class="add-card__fields">
-                <li class="add-card__item">
-                    <label class="add-card__label">
-                        <span class="add-card__subtitle">Назва товару</span>
-                        <input class="add-card__input" type="text" name="title" required />
-                    </label>
+        <h2 class="create-an-ad-modal__title">Додати оголошеня</h2>
+        <form action="" id="form-add" method="POST">
+            <ul>
+                <li class="create-an-ad-modal-li">
+                    <span class="create-an-ad-modal__title-text">Назва товару</span>
+                    <input type="text" name="product-name-add" id="product-name-add"
+                        class="create-an-ad-modal__input-area required">
                 </li>
-                <li class="add-card__item">
-                    <label class="add-card__label">
-                        <span class="add-card__subtitle">Фото</span>
-                        <ul class="photo-list">
-                            <li class="photo-item">
-                                <input id="photoElem" class="photo-input" type="file" name="file" multiple
-                                    accept="image/*" />
-                                <label for="photoElem" class="photo-label"><span
-                                        class="material-icons">add</span></label>
-                            </li>
-                            <li class="photo-item"></li>
-                            <li class="photo-item"></li>
-                            <li class="photo-item"></li>
-                            <li class="photo-item"></li>
-                        </ul>
-                    </label>
+                <li class="create-an-ad-modal__file-loader create-an-ad-modal-li">
+                    <span class="create-an-ad-modal__title-text">фото</span>
+                    <div class="create-an-ad-modal__file-box js-inputClick">
+                        <div class="create-an-ad-modal-btn-file">
+                            <input type="file" name="file" id="file" class="create-an-ad-modal__input-file">
+                            <label for="file" class="create-an-ad-modal__tertiary js-labelFile">
+                                <span class="js-fileName">+</span>
+                                <img id="add-image" class="create-an-ad-modal__add-image" />
+                            </label>
+                        </div>
+                        <div class="create-an-ad-modal-btn-file">
+                            <input type="file" name="file" id="file-2" class="create-an-ad-modal__input-file">
+                            <label for="file-2" class="create-an-ad-modal__tertiary js-labelFile">
+                                <span class="js-fileName">+</span>
+                                <img id="add-image2" class="create-an-ad-modal__add-image" />
+                            </label>
+                        </div>
+                        <div class="create-an-ad-modal-btn-file">
+                            <input type="file" name="file" id="file-3" class="create-an-ad-modal__input-file">
+                            <label for="file-3" class="create-an-ad-modal__tertiary js-labelFile">
+                                <span class="js-fileName">+</span>
+                                <img id="add-image3" class="create-an-ad-modal__add-image" />
+                            </label>
+                        </div>
+                        <div class="create-an-ad-modal-btn-file">
+                            <input type="file" name="file" id="file-4" class="create-an-ad-modal__input-file">
+                            <label for="file-4" class="create-an-ad-modal__tertiary js-labelFile">
+                                <span class="js-fileName">+</span>
+                                <img id="add-image4" class="create-an-ad-modal__add-image" />
+                            </label>
+                        </div>
+                        <div class="create-an-ad-modal-btn-file">
+                            <input type="file" name="file" id="file-5" class="create-an-ad-modal__input-file">
+                            <label for="file-5" class="create-an-ad-modal__tertiary js-labelFile">
+                                <span class="js-fileName">+</span>
+                                <img id="add-image5" class="create-an-ad-modal__add-image" />
+                            </label>
+                        </div>
+                        <div class="create-an-ad-modal-btn-file">
+                            <input type="file" name="file" id="file-6" class="create-an-ad-modal__input-file">
+                            <label for="file-6" class="create-an-ad-modal__tertiary js-labelFile">
+                                <span class="js-fileName">+</span>
+                                <img id="add-image6" class="create-an-ad-modal__add-image" />
+                            </label>
+                        </div>
+                    </div>
                 </li>
-                <li class="add-card__item">
-                    <label class="add-card__label">
-                        <span class="add-card__subtitle">Опис товару</span>
-                        <textarea rows="3" class="add-card__input description" name="description" required></textarea>
-                    </label>
+                <li class="create-an-ad-modal-li">
+                    <span class="create-an-ad-modal__title-text">Опис товару</span>
+                    <input type="text" name="product-desc-add" id="product-desc-add"
+                        class="create-an-ad-modal__input-area required">
                 </li>
-                <li class="add-card__item">
-                    <label class="add-card__label notice">
-                        <span class="add-card__category">Категорія товару</span>
-                        <input class="add-card__input select-input" type="text" name="category" required />
-                        <button class="icon-btn" type="button">
-                            <span class="material-icons" width="10px" height="5px">arrow_drop_down</span>
-                        </button>
-                    </label>
+                <li class="create-an-ad-modal-li">
+                    <label for="categori-product-add"></label>
+                    <span class="create-an-ad-modal__title-text">Категорія Товару</span>
+                    <input type="text" name="categori-product-add" id="categori-product-add"
+                        class="create-an-ad-modal__input-area" list="categori-product-add-list"
+                        placeholder="Вибіріть категорію">
+                    <datalist id="categori-product-add-list">
+                    </datalist>
                 </li>
-                <li class="add-card__item">
-                    <label class="add-card__label notice">
-                        <span class="add-card__subtitle">Ціна</span>
-                        <input class="add-card__input" type="number" name="price" placeholder=" " required />
-                        <span class="notice-label">0.00</span>
-                        <span class="price">грн</span>
-                    </label>
+                <li class="create-an-ad-modal-li">
+                    <span class="create-an-ad-modal__title-text">Ціна</span>
+                    <input type="text" name="price-product-add" id="price-product-add"
+                        class="create-an-ad-modal__input-area required" placeholder="0.00 грн">
                 </li>
-                <li class="add-card__item">
-                    <label class="add-card__label notice">
-                        <span class="add-card__subtitle">Телефон</span>
-                        <input class="add-card__input" type="tel" name="phone" placeholder=" " required />
-                        <span class="notice-label">+38 (0--) --- -- --</span>
-                    </label>
+                <li class="create-an-ad-modal-li">
+                    <span class="create-an-ad-modal__title-text">Телефон</span>
+                    <input type="text" name="sellers-telephone-add" id="sellers-telephone-add"
+                        class="create-an-ad-modal__input-area required" placeholder="+38 (0--) --- -- --">
                 </li>
             </ul>
-
-            <button class="submit-btn" type="submit">Додати</button>
+            <button type="submit" class="create-an-ad-modal__submit-btn">
+                <span class="create-an-ad-modal__submit-text">Додати</span>
+            </button>
         </form>
     </div>
 </div>
