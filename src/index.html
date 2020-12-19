@@ -165,9 +165,9 @@
       </div>
     </div>
 
-    <div id="create-an-ad-modal" class="create-an-ad-modal" data-create-ad>
+    <!-- <div id="create-an-ad-modal" class="create-an-ad-modal backdrop-add is-hidden" data-create-ad>
     
-      <div class="create-an-ad-modal__box container ">
+      <div class="create-an-ad-modal__box container overlay-add">
         <button type="button" class="create-an-ad-modal__menu-clouse" data-clouse-button-create-ad>
           <svg aria-label="закрыть окно" class="create-an-ad-modal__icon-clouse">
             <use href="./images/sprite-min.svg#icon-menu-clouse" widrh="14" height="14">
@@ -175,11 +175,11 @@
           </svg>
         </button>
     <h2 class="create-an-ad-modal__title">Додати оголошеня</h2>
-    <form action="" method="POST">
+    <form action="" id="form-add" method="POST">
       <ul>
         <li class="create-an-ad-modal-li">
           <span class="create-an-ad-modal__title-text">Назва товару</span>
-          <input type="text" name="product-name-add" id="product-name-add" class="create-an-ad-modal__input-area">
+          <input type="text" name="product-name-add" id="product-name-add" class="create-an-ad-modal__input-area required">
         </li>
         <li class="create-an-ad-modal__file-loader create-an-ad-modal-li">
           <span class="create-an-ad-modal__title-text">фото</span>
@@ -230,7 +230,7 @@
         </li>
         <li class="create-an-ad-modal-li">
           <span class="create-an-ad-modal__title-text">Опис товару</span>
-          <input type="text" name="product-desc-add" id="product-desc-add" class="create-an-ad-modal__input-area" >
+          <input type="text" name="product-desc-add" id="product-desc-add" class="create-an-ad-modal__input-area required" >
         </li>
         <li class="create-an-ad-modal-li">
           <label for="categori-product-add"></label>
@@ -241,11 +241,11 @@
         </li >
         <li class="create-an-ad-modal-li">
           <span class="create-an-ad-modal__title-text">Ціна</span>
-          <input type="text" name="price-product-add" id="price-product-add" class="create-an-ad-modal__input-area" placeholder="0.00 грн">
+          <input type="text" name="price-product-add" id="price-product-add" class="create-an-ad-modal__input-area required" placeholder="0.00 грн">
         </li>
         <li class="create-an-ad-modal-li">
           <span class="create-an-ad-modal__title-text">Телефон</span>
-          <input type="text" name="sellers-telephone-add" id="sellers-telephone-add" class="create-an-ad-modal__input-area" placeholder="+38 (0--) --- -- --"> 
+          <input type="text" name="sellers-telephone-add" id="sellers-telephone-add" class="create-an-ad-modal__input-area required" placeholder="+38 (0--) --- -- --"> 
         </li>
       </ul>
       <button type="submit" class="create-an-ad-modal__submit-btn" >
@@ -256,8 +256,8 @@
 
     
     
-    </div>
-
+    </div> -->
+    <div class=".my-cards"></div>
     <div class="create-an-ad-modal-mobile js-create-an-ad-modal-mobile is-login">
       <button class="create-an-ad-modal-mobile__btn">
         <svg aria-label="Добавить товар" class="create-an-ad-modal-mobile-icon" width="50" height="50">
