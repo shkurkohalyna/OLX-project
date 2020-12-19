@@ -51,7 +51,7 @@ onOpenModalHeader(clouseModalCreateAnAd, modalCreateAnAd)
 /** модалка поиска */
 onOpenModalHeader(btnOpenModalSerch, modalSerch) 
 onOpenModalHeader(btnClouseModalSerch, modalSerch)
-containerModalSerch.addEventListener('click', inGetFind)
+containerModalSerch.addEventListener('submit', inGetFind)
 function inGetFind(e) {
         e.preventDefault()
         if (e.currentTarget.elements.query.value === '') {return}
