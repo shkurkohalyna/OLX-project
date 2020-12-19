@@ -12,5 +12,6 @@ export default function getRefs (){
     showMyAdsTabMob: document.querySelector("[data-dropdown-ad-tm]"), 
     exitAccount: document.querySelector('[data-exit]'), 
     btnSubmitCreate: document.querySelector('.create-an-ad-modal__submit-btn'),
+    mainRef: document.querySelector('.main-js'),
   }
 }

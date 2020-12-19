@@ -34,7 +34,7 @@ import {cards} from './cards.js'
   "imageUrls": ["string"
 ]
     }
-const cardID = '5fd394e86da6ab0017dbf5d4';
+const cardID = '5fd86775c298a200179c9404';
 // const userId = load('UserToken').user.id;
 const newUser = {
     "email": "artiss2@example.com",
@@ -70,6 +70,11 @@ const myCategory = 'transport';
 // fetchGetFind(API_OLX, searchFind).then(console.log)
 // fetchGetSpecificCategory(API_OLX, myCategory).then(console.log) /**находит определённую категорию */
 // fetchAuthenRefresh(API_OLX).then(console.log) /*обновляет 'key','refreshToken','sid'*/
+// fetchAuthenRefresh(API_OLX).then(response => {
+//     save('key', response.newAccessToken)
+//     save('refreshToken', response.newRefreshToken)
+//     save('sid', response.newSid)
+// }) /*обновляет 'key','refreshToken','sid'*/
 // fetchLogout(API_OLX).then(console.log) /*выход за Аккаунту и удаляет 'key'*/
 // fetchCall(API_OLX, 2).then(render => document.querySelector('.cards').innerHTML = templateCard(render.trade)) /**тестовый фич для слайдера и т.д. */
 
