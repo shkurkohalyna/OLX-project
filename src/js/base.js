@@ -20,7 +20,8 @@ import { fetchPostCall } from './fetch/fetchPostCall'; /*ошибка серве
 import { fetchPatchCall } from './fetch/fetchPatchCall';/**немогу достучатся, скорей всего нужно применять на товаре созданым в своей учётке*/
 import { fetchDeleteCallID } from './fetch/fetchDeleteCallID';
 import { fetchAuthenRefresh } from './fetch/fetchAuthenRefresh';
-import {cards} from './cards.js'
+import { cards } from './cards.js'
+import slider from './sliderNew';
 
 
 /***************************примеры данных для фетч */
@@ -82,25 +83,16 @@ fetchAuthenticationLogin(API_OLX, newUser).then(response => { save('UserToken', 
 
 
 /************************************************************************ ниже експерементальный код */
-/*ещё не работает, должно сабмитить поля с созданой карточки*/
-// const refs = getRefs();
-// console.log(refs.btnSubmitCreate);
-// refs.btnSubmitCreate.addEventListener('submit', postSubmitCreate)
-// async function postSubmitCreate(event) {
-//     event.preventDefault();
-//     const dataField = {
-//         /** заглушка*/
-//   "title": "Red Shirt",
-//   "description": "New red shirt, made from cotton",
-//   "category": "Trade",
-//   "price": 0,
-//   "phone": "+380000000000",
-//   "imageUrls": ["string"
-// ]
-//     }
-//     console.log(dataField);
-//     fetchPostCall(API_OLX, dataField).then(console.log)
-//     console.log(event.currentTarget);
-// }
 
+// прокрутка слайдов
+const refs = getRefs();
+refs.myAds.addEventListener('click', listenSlide);
+
+function listenSlide (event)
+{console.log(event.target);
+    if (event.target.hasAttribute('data-slide')) {
+        console.log(event.target);
+        return slider(event)
+    }
+};
 

@@ -1,11 +1,14 @@
-button.next {
-
+.next-btn {
+  width: 30px;
+  height: 30px;
 }
 
-.next-btn{
-    width: 30px;
+.pre-btn {
+  width: 30px;
+  height: 30px;
 }
-
-.pre-btn{
-    width: 30px;
+.overflow {
+  overflow: hidden;
+  position: relative;
+  height: calc(((100vw - 100px) / 4 * 275 / 295) + 95px);
 }
