@@ -14,14 +14,20 @@ fetchGetSpecificCategory(API_OLX, 'property').then(getArray)
 // here we are rendering one category we are choosing by click on category;))
 const chooseCategory = document.querySelector('.sidenav-desctop');
 chooseCategory.addEventListener('click', onCategoryClick)
+const mobileMenuRef = document.querySelector('[data-menu]');
+mobileMenuRef.addEventListener(`click`, onCategoryClick)
 
 function onCategoryClick(e) {
+    if (e.target.nodeName !== `LI`) {
+        return
+ }
   e.preventDefault();
   
   const category = e.target.textContent;
   
   fetchGetSpecificCategory(API_OLX, category.trim()).then(render => document.querySelector('.cards').innerHTML = templateCard(render))
   fetchGetSpecificCategory(API_OLX, category.trim()).then(getArray)
+    history.pushState(null, null, e.target.dataset.category);
   setTimeout(() =>
   { document.querySelector('.cards__title').textContent = category;
 }, 150);
