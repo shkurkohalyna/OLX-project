@@ -3,6 +3,7 @@ import { API_OLX } from "./url.js";
 import  templateCard  from '../templates/cardset.hbs';
 // import { fetchCall } from './fetch/fetchCall.js';
 import { fetchGetSpecificCategory } from './fetch/fetchGetSpecificCategory';
+import { fetchPostAddFavoriteID } from './fetch/fetchPostAddFavoriteID';
 
 // we wont be used this one;
 // fetchCall(API_OLX, 3).then(render => document.querySelector('.cards').innerHTML = templateCard(render.property))
@@ -54,17 +55,21 @@ const price = document.querySelector('[data-item-modal-price]');
 // but it is not still working correct:((;
 
   const openModal = document.querySelector('.cards')
-  openModal.addEventListener('click', onClick);
+  openModal.addEventListener('click', onExpandClick);
 
-  function onClick(e) {
+  function onExpandClick(e) {
     e.preventDefault();
-
     const target = e.target.dataset.id;
+    
+    if (e.target.attributes[0].nodeName === 'data-open') {
 
-    for (const item of value) {
+      for (const item of value) {
+
       if (item._id === target) {
         showModal(item)
       }
+    }
+    
    }
   }
 
@@ -75,4 +80,21 @@ function showModal(item) {
   description.textContent = item.description;
   imgBig.src = item.imageUrls[0];
   code.textContent = "Код товару | "+item._id;
+}
+
+
+// This function is used by click on Like;
+openModal.addEventListener('click', onLikeClick);
+
+function onLikeClick(e) {
+  e.preventDefault()
+  const target = e.target.dataset.id;
+  if (e.target.attributes[0].nodeName === 'data-like') {
+    for (const item of value) {
+
+      if (item._id === target) {
+        fetchPostAddFavoriteID(API_OLX, item._id).then(console.log);
+      }
+    }
+  }
 }
