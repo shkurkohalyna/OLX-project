@@ -1,6 +1,5 @@
 import { API_OLX } from './url';
 
-import { fetchGetSpecificCategory } from './fetch/fetchGetSpecificCategory'
 import { fetchCategory } from './fetch/fetchCategory';
 import MarkupSideNavDesctop from '../templates/header-sidenav-desctop.hbs';
 import MarkupSidenavMobile from '../templates/header-sidenav-mobile.hbs';
@@ -27,20 +26,34 @@ const containerModalSerch = document.querySelector(`.modal-search__container`)
 const btnClouseModalSerch = document.querySelector(`.js-btn-clouse-modal-serch`)
 const btnSearchInput = document.querySelector(`.search__button`)
 const btnOpenCreateAnAdMobile = document.querySelector(`.js-create-an-ad-modal-mobile`)
-const DesctopCategory = document.querySelector(`#sidenav-desctop`)
-const mobileCategory = document.querySelector(`#sidenav-mobile`)
-
+const btnClearFilter = document.querySelector(`.header-navigation__clear-filter`)
+const btnLogo = document.querySelector(`.header-navigation_logo`)
 // const openModalRegistrartion = document.querySelector(`[data-modal-open-registration]`)
 // const modalRegistration = document.querySelector(`[data-menu-registration]`)
 // const clouseModalRegistration = document.querySelector(` [data-clouse-button-modal-registration]`)
 
 // открытие - закрытие модалок Хедера
+function controlModalWindow(modal) {
+           modal.classList.toggle(`is-open`)
+        body.classList.toggle(`is-open-modal`)
+}
+
+
 function onOpenModalHeader(btn, modal) {
         btn.addEventListener(`click`, openModal)
         function openModal() {
-                modal.classList.toggle(`is-open`)
-                body.classList.toggle(`is-open-modal`)
+               controlModalWindow(modal)
         }
+}
+
+modalSerch.addEventListener(`click`, closeBackDropSerch)
+window.addEventListener(`keydown`, closeBackDropSerch)
+function closeBackDropSerch(evt) {
+        if (modalSerch.classList.contains(`is-open`)) {
+                if (evt.target.className === `modal-search__overlay` || evt.keyCode === 27) {
+                controlModalWindow(modalSerch)
+        }    }
+       
 }
 
 onOpenModalHeader(openSideNav, mobileMenuRef)
@@ -83,16 +96,12 @@ function appendchangeCategoryForCreateAnAd(cat) {
         changeCategoryForCreateAnAd.innerHTML = MarkupModalCreateAnAdCategory(cat)
 }
 
-
-// Фильтр по кнопкам категорий
-// DesctopCategory.addEventListener(`click`, SerchItemsIsCategory)
-// mobileMenuRef.addEventListener(`click`, SerchItemsIsCategory)
-// function SerchItemsIsCategory(evt) {
-//         if (evt.target.nodeName !== `LI`) {
-//                 return
-//         }
-//         const category = `${evt.target.dataset.category}`
-//         console.log(category);
-//         fetchGetSpecificCategory(API_OLX, category).then(responce => console.log(responce))
-//         history.pushState(null, null, evt.target.dataset.category);
-// }
+clearURL(btnClearFilter)
+clearURL(btnLogo)
+function clearURL(btn) {
+        btn.addEventListener(`click`, baseURL)
+        function baseURL() {
+                history.pushState(null, null, `/`)
+} 
+        }
+        
