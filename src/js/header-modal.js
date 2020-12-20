@@ -56,8 +56,6 @@ onOpenModalHeader(btnClouseModalSerch, modalSerch)
 // onOpenModalHeader(sidenavModalRegistrartion,modalRegistration)
 
 /** модалка поиска */
-onOpenModalHeader(btnOpenModalSerch, modalSerch) 
-onOpenModalHeader(btnClouseModalSerch, modalSerch)
 containerModalSerch.addEventListener('submit', inGetFind)
 function inGetFind(e) {
         e.preventDefault()
