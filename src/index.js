@@ -6,6 +6,7 @@ import './js/header-modal';
 // import './js/modal';
 import './js/auth-modal';
 import './js/logout-popup';
+import './js/edit-ad';
 import './js/my-ads-card-render';
 import './js/item-modal';
 import './js/dropdowm-menu';
