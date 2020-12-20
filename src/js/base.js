@@ -46,13 +46,13 @@ const myCategory = 'transport';
 /********************************************** пример использования всех наших фетчей */
 // fetchCategory(API_OLX).then(console.log)
 // fetchRegistration(API_OLX, newUser).then(console.log)
-// fetchAuthenticationLogin(API_OLX, newUser).then(response => {
-//     save('key', response.accessToken)
-//     save('refreshToken', response.refreshToken)
-//     save('sid', response.sid)
-// }
-//     )
-// fetchAuthenticationLogin(API_OLX, newUser).then(response => { save('UserToken', response) }) 
+fetchAuthenticationLogin(API_OLX, newUser).then(response => {
+    save('key', response.accessToken)
+    save('refreshToken', response.refreshToken)
+    save('sid', response.sid)
+}
+    )
+fetchAuthenticationLogin(API_OLX, newUser).then(response => { save('UserToken', response) }) 
 // console.log(load('UserToken').user.id);
 // fetchAuthenGoogle(API_OLX).then(console.log) /**ещё работает */
 // fetchCall(API_OLX, 1).then(console.log)
