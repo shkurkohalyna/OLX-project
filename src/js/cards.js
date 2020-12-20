@@ -11,7 +11,7 @@ import templateHomeCard from '../templates/home-card.hbs';
 // fetchCall(API_OLX, 3).then(render => document.querySelector('.cards').innerHTML = templateCard(render.property))
 
 // category property is rendered by default;)))
-fetchCall(API_OLX, 1).then(render => document.querySelector('.cards').innerHTML = templateHomeCard(render))
+// fetchCall(API_OLX, 1).then(render => document.querySelector('.cards').innerHTML = templateHomeCard(render))
 fetchCall(API_OLX, 1).then(getArray)
 
 // here we are rendering one category we are choosing by click on category;))

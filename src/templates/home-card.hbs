@@ -1,4 +1,15 @@
 {{#each this}}
+<button class="prev">
+    <svg class="pre-btn">
+        <use href="./images/sprite.svg#icon-prev-btn"></use>
+    </svg>
+</button>
+<a href="" class="categorylist__link">Дивитися всі</a>
+<button class="next">
+    <svg class="next-btn">
+        <use href="./images/sprite.svg#icon-next-btn"></use>
+    </svg>
+</button>
 <ul class="cardset">
     {{#each this}}
     {{>./card}}
