@@ -1,20 +1,26 @@
-import addModalTempl from '../../templates/add-card.hbs' ;
+import addModalTempl from '../templates/add-card.hbs' ;
 import { API_OLX } from './url';
 
 
 
 
 // створення шаблону(div.my-cards)
-
-const myProducts =  document.querySelector('.my-cards');
 function createNewModalTempl(){
     myProducts.insertAdjacentHTML('afterbegin', addModalTempl())
 }
 
-createNewModalTempl()
+// createNewModalTempl()
 
 
 
+// Закриття модалки
+const refs = {
+    closeModalBtn: document.querySelector('[data-clouse-button-create-ad]'),
+    backdropAdd: document.querySelector('.backdrop-add'),
+    authModal: document.querySelector('[data-auth-modal]')
+};
+console.log(refs.backdropAdd);
+const myProducts =  document.querySelector('.my-cards');
 const formAdd = document.querySelector('#form-add');
 const validateBtn = formAdd.querySelector('.create-an-ad-modal-mobile__btn');
 const nameProduct = formAdd.querySelector('#product-name-add');
@@ -56,8 +62,8 @@ function renderCategoriesList() {
 
 
 // Коректні дані
-const correctTel =  /((\+38)?\(?\d{3}\)?[\s\.-]?(\d{7}|\d{3}[\s\.-]\d{2}[\s\.-]\d{2}|\d{3}-\d{4}))/;
-const correctPrice = /\d+\.\d{2}\D{3}/;
+const correctTelV =  /((\+38)?\(?\d{3}\)?[\s\.-]?(\d{7}|\d{3}[\s\.-]\d{2}[\s\.-]\d{2}|\d{3}-\d{4}))/;
+const correctPriceV = /\d+\.\d{2}\D{3}/;
 
 
 
@@ -99,7 +105,7 @@ function correctFields(){
 
 function correctTel(){
     if(tel.value !== ""){
-        if(!correctTel.test(tel.value)){
+        if(!correctTelV.test(tel.value)){
             console.log('невірно введений номер');
             const error = errorCreate('невірноно введений номер');
             tel.parentElement.insertBefore(error, tel);
@@ -109,7 +115,7 @@ function correctTel(){
 
 function correctPrice(){
     if(productPrice.value !== ""){
-        if(!correctPrice.test(productPrice.value)){
+        if(!correctPriceV.test(productPrice.value)){
             const error = errorCreate('введіть ціну згідно формату 0.00грн')
             productPrice.parentElement.insertBefore(error, productPrice);
         }
@@ -121,12 +127,6 @@ function correctPrice(){
 
 
 
-// Закриття модалки
-const refs = {
-    closeModalBtn: document.querySelector('[data-clouse-button-create-ad]'),
-    backdropAdd: document.querySelector('.backdrop-add'),
-    authModal: document.querySelector('[data-auth-modal]')
-};
 
 //  через кнопку
 refs.closeModalBtn.addEventListener('click', modalClose);
