@@ -1,6 +1,6 @@
 import { API_OLX } from './url';
 import fetchCategory from './fetch/fetchCategory';
-import {fetchGetSpecificCategory} from './fetch/fetchGetSpecificCategory'
+import { fetchGetSpecificCategory } from './fetch/fetchGetSpecificCategory'
 import MarkupSideNavDesctop from '../templates/header-sidenav-desctop.hbs'
 import MarkupSidenavMobile from '../templates/header-sidenav-mobile.hbs'
 import MarkupModalCreateAnAdCategory from '../templates/header-create-an-ad-category.hbs'
@@ -40,14 +40,14 @@ onOpenModalHeader(clouseSideNav, mobileMenuRef)
 onOpenModalHeader(openCreateAnAd, modalCreateAnAd)
 onOpenModalHeader(btnOpenCreateAnAdMobile, modalCreateAnAd)
 onOpenModalHeader(clouseModalCreateAnAd, modalCreateAnAd)
-onOpenModalHeader(btnOpenModalSerch, modalSerch) 
+onOpenModalHeader(btnOpenModalSerch, modalSerch)
 onOpenModalHeader(btnClouseModalSerch, modalSerch)
 
 // onOpenModalHeader(openModalRegistrartion, modalRegistration)
 // onOpenModalHeader(clouseModalRegistration, modalRegistration)
 // onOpenModalHeader(sidenavModalRegistrartion,modalRegistration)
 
- // sidenav(Desctop) рендер категорий
+// sidenav(Desctop) рендер категорий
 fetchCategory(API_OLX).then(responce => appendSideNavDesctop(responce))
 function appendSideNavDesctop(cat) {
         sideNavDesctop.innerHTML = MarkupSideNavDesctop(cat)
@@ -55,7 +55,7 @@ function appendSideNavDesctop(cat) {
 // sidenav(mobile-tablet) рендрер категорий
 fetchCategory(API_OLX).then(responce => appendSideNavMobile(responce))
 function appendSideNavMobile(cat) {
-        mobileMenuRef.firstElementChild.insertAdjacentHTML(`beforeend`, MarkupSidenavMobile(cat)) 
+        mobileMenuRef.firstElementChild.insertAdjacentHTML(`beforeend`, MarkupSidenavMobile(cat))
 }
 
 //Создать обьявление рендер категорий
@@ -68,12 +68,12 @@ function appendchangeCategoryForCreateAnAd(cat) {
 // Фильтр по кнопкам категорий
 DesctopCategory.addEventListener(`click`, SerchItemsIsCategory)
 mobileMenuRef.addEventListener(`click`, SerchItemsIsCategory)
-function SerchItemsIsCategory(evt) {         
+function SerchItemsIsCategory(evt) {
         if (evt.target.nodeName !== `LI`) {
-        return
-}
+                return
+        }
         const category = `${evt.target.dataset.category}`
         console.log(category);
         fetchGetSpecificCategory(API_OLX, category).then(responce => console.log(responce))
         history.pushState(null, null, evt.target.dataset.category);
-        }
+}
