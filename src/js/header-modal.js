@@ -85,14 +85,14 @@ function appendchangeCategoryForCreateAnAd(cat) {
 
 
 // Фильтр по кнопкам категорий
-DesctopCategory.addEventListener(`click`, SerchItemsIsCategory)
-mobileMenuRef.addEventListener(`click`, SerchItemsIsCategory)
-function SerchItemsIsCategory(evt) {
-        if (evt.target.nodeName !== `LI`) {
-                return
-        }
-        const category = `${evt.target.dataset.category}`
-        console.log(category);
-        fetchGetSpecificCategory(API_OLX, category).then(responce => console.log(responce))
-        history.pushState(null, null, evt.target.dataset.category);
-}
+// DesctopCategory.addEventListener(`click`, SerchItemsIsCategory)
+// mobileMenuRef.addEventListener(`click`, SerchItemsIsCategory)
+// function SerchItemsIsCategory(evt) {
+//         if (evt.target.nodeName !== `LI`) {
+//                 return
+//         }
+//         const category = `${evt.target.dataset.category}`
+//         console.log(category);
+//         fetchGetSpecificCategory(API_OLX, category).then(responce => console.log(responce))
+//         history.pushState(null, null, evt.target.dataset.category);
+// }
