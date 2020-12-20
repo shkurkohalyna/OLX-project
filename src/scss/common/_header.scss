@@ -247,6 +247,9 @@ button {
   height: 24px;
 }
 .header-navigation__clear-filter-text {
+  font-family: $montserrat-font-fam;
+  letter-spacing: 0.03em;
+
   display: block;
   padding: 0;
   margin-left: 11px;
