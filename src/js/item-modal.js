@@ -4,12 +4,13 @@ import { fetchFavouritesDelete } from './fetchFavouritesDelete';
 import { fetchGetFavorites } from './fetch/fetchGetFavorites';
 import { fetchPostAddFavoriteID } from './fetch/fetchPostAddFavoriteID';
 import { fetchGetUserID } from './fetch/fetchGetUserID';
+import { renderFavourites } from './dropdowm-menu';
 
 const modal = document.querySelector('[data-item-modal]');
 const name = document.querySelector('[data-item-modal-title]');
 const code = document.querySelector('[data-item-modal-code]');
 const imgBig = document.querySelector('[data-item-modal-imagebig]');
-const imagesSmall = document.querySelectorAll('[data-item-modal-imagesmall]');
+const imagesSmall = document.querySelector('[data-item-modal-image-list]');
 const salerInfo = document.querySelector('[data-item-modal-salerinfo]');
 const favourites = document.querySelector('[data-item-modal-favourites]');
 const share = document.querySelector('[data-item-modal-share]');
@@ -38,6 +39,9 @@ function onFavouritesClicked() {
 }
 
 function updateFavourites(render) {
+    if(document.querySelector(".container-my-favourites")!==null){
+        renderFavourites();
+    }
   if (render === null) return;
   console.log(render);
   favouritesList = [];
@@ -58,6 +62,8 @@ function onItemClicked(event) {
   console.log(event.target.src);
   fetchGetFavorites(API_OLX).then(setFavourites);
   const image = event.target.querySelector("[data-id]");
+  console.log(image);
+  if(image===null)return;
   console.log(image.dataset.id);
   for (const item of itemsData) {
     // if (item._id === undefined) continue;
@@ -99,6 +105,9 @@ function closeModal() {
   if (modal.classList.contains('isActive')) {
     modal.classList.remove('isActive');
   }
+  document.querySelector("body").classList.remove('scrollLocked');
+  imagesSmall.innerHTML = "";
+  imagesSmall.removeEventListener('click', changePhoto);
 }
 let favouritesList = [];
 fetchGetFavorites(API_OLX).then(setFavourites);
@@ -122,10 +131,12 @@ function setData(render) {
     const array = render[key];
     for (const item of array) {
       itemsData.push(item);
+      if(item.imageUrls.length>1){
+          console.log(item);
+          
+      }
     }
   }
-
-  console.log(itemsData.length);
 }
 
 salerInfo.addEventListener('mouseenter', addHoverText);
@@ -155,6 +166,8 @@ function addNonhoverText() {
 }
 
 function showModal(item) {
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+    document.querySelector("body").classList.add('scrollLocked');
   modal.classList.add('isActive');
   name.textContent = item.title;
   price.textContent = item.price + '.00 грн';
@@ -168,6 +181,12 @@ function showModal(item) {
     '<p class="nav-and-description-button-nonhovered">Информация о<br> продавце</p>',
   );
 
+  for(let value of item.imageUrls){
+    console.log(value);
+    imagesSmall.insertAdjacentHTML('afterbegin','<li class="image-block-small-list-item"><img class="image-block-small-list-item-img" data-item-modal-imagesmall src="'+value+'" alt=""><div></div></li>');
+  }
+
+  imagesSmall.addEventListener('click', changePhoto);
   console.log(favourites);
   for (const localeItem of favouritesList) {
     console.log(localeItem + '  ' + item._id);
@@ -177,7 +196,25 @@ function showModal(item) {
       return;
     }
   }
+
   favourites.classList.remove('selected');
+}
+
+
+function changePhoto(event){
+    console.log(event.target.src);
+    if(event.target.src!==undefined && event.target.src !== null){
+        imgBig.src = event.target.src;
+    }
+}
+
+
+modal.addEventListener('click', closeOverlay);
+
+function closeOverlay(event){
+    if(event.target.classList.contains("overlay")){
+        closeModal();
+    }
 }
 
 //<li class="image-block-small-list-item">
