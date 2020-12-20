@@ -1,4 +1,5 @@
 import './js/base';
+import './js/preloader';
 import './scss/main.scss';
 import './js/header-modal';
 // import './js/slider';

@@ -19,11 +19,14 @@ const chooseCategory = document.querySelector('.sidenav-desctop');
 chooseCategory.addEventListener('click', onCategoryClick)
 const mobileMenuRef = document.querySelector('[data-menu]');
 mobileMenuRef.addEventListener(`click`, onCategoryClick)
+// const paginationSection = document.querySelector('is-shown');
 
 function onCategoryClick(e) {
+  // paginationSection.classList.remove('is-shown'); не фурыкает пока-что....
     if (e.target.nodeName !== `LI`) {
         return
  }
+
   e.preventDefault();
   
   const category = e.target.textContent;
