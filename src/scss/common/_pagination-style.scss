@@ -1,0 +1,21 @@
+.pages-section {
+    display: flex;
+}
+
+.pages-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+        width: 60px;
+        height: 60px;
+    @media screen and (max-width: $tablet-lower) {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+.pages-section .active {
+    background: $black-color;
+    color: $white-color;
+}

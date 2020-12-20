@@ -26,8 +26,8 @@ function onInitCallback() {
     onChange: onChangeCallback,
   });
   
-//   const prev = document.querySelector('.prev');
-//   const next = document.querySelector('.next');
+  const prev = document.querySelector('.prev');
+  const next = document.querySelector('.next');
   
-//   prev.addEventListener('click', () => mySiema.prev());
-//   next.addEventListener('click', () => mySiema.next());
+  prev.addEventListener('click', () => mySiema.prev());
+  next.addEventListener('click', () => mySiema.next());
