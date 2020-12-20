@@ -58,7 +58,7 @@ function inGetFind(e) {
         const find = e.currentTarget.elements.query.value;
         history.pushState(null, null, `find?search=${find}`)
         console.log(find);
-        fetchGetFind(API_OLX, find).then(response => {refs.mainRef.innerHTML = MarkupFindSearch(response)})
+        fetchGetFind(API_OLX, find).then(response => {refs.myAds.innerHTML = MarkupFindSearch(response)})
 };
 
 /************************************************* */
