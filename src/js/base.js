@@ -89,10 +89,7 @@ const refs = getRefs();
 refs.myAds.addEventListener('click', listenSlide);
 
 function listenSlide (event)
-{console.log(event.target);
-    if (event.target.hasAttribute('data-slide')) {
-        console.log(event.target);
-        return slider(event)
-    }
+{
+    if (event.target.hasAttribute('data-slide')) { return slider(event) }
 };
 
