@@ -1,6 +1,6 @@
 <ul>
     {{#each this}}
-    <li class="sidenav__ref">
+    <li class="sidenav__ref" data-category="{{@value}}{{this}}">
         {{@value}} {{this}}
     </li>
     {{/each}}
