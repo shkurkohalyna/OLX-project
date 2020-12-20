@@ -1,4 +1,4 @@
-export default async function fetchAuthenticationLogin(url, dataRegistry) {
+export async function fetchAuthenticationLogin(url, dataRegistry) {
     const options = {
   method: 'POST',
   body: JSON.stringify(dataRegistry),

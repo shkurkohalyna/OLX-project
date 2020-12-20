@@ -1,4 +1,4 @@
-export default async function fetchRegistration(url, dataRegistry) {
+export async function fetchRegistration(url, dataRegistry) {
     const options = {
   method: 'POST',
   body: JSON.stringify(dataRegistry),
