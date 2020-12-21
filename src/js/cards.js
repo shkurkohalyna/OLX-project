@@ -11,19 +11,20 @@ import templateHomeCard from '../templates/home-card.hbs';
 // fetchCall(API_OLX, 3).then(render => document.querySelector('.cards').innerHTML = templateCard(render.property))
 
 // category property is rendered by default;)))
-fetchCall(API_OLX, 1).then(render => document.querySelector('.cards').innerHTML = templateHomeCard(render))
+// fetchCall(API_OLX, 1).then(render => document.querySelector('.cards').innerHTML = templateHomeCard(render))
 fetchCall(API_OLX, 1).then(getArray)
 
 // here we are rendering one category we are choosing by click on category;))
 const chooseCategory = document.querySelector('.sidenav-desctop');
 chooseCategory.addEventListener('click', onCategoryClick)
 const mobileMenuRef = document.querySelector('[data-menu]');
-mobileMenuRef.addEventListener(`click`, onCategoryClick)
-
+mobileMenuRef.addEventListener(`click`, onCategoryClick
 function onCategoryClick(e) {
+  // paginationSection.classList.remove('is-shown'); не фурыкает пока-что....
     if (e.target.nodeName !== `LI`) {
         return
  }
+
   e.preventDefault();
   
   const category = e.target.textContent;
@@ -38,7 +39,8 @@ function onCategoryClick(e) {
 
 let value;
 function getArray(val) {
-     value = val;
+  value = val;
+
 }
   
 

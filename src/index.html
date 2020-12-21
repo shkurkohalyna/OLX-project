@@ -11,6 +11,14 @@
     <title>OLX</title>
   </head>
   <body>
+
+    <div class="preloader">
+      <div class="preloader__row">
+        <div class="preloader__item"></div>
+        <div class="preloader__item"></div>
+      </div>
+    </div>
+
   <header>
     <script type='text/javascript'>
  function preview_image(event) {
@@ -49,7 +57,7 @@
   
           <button type="button" class="create-an-ad" data-create-an-ad-btn-open>
             <span>
-              створити оголошення
+              створити оголошення!
             </span>
           </button>
           <div class="header-navigation__menu-acount is-login">
@@ -299,10 +307,10 @@
   <main class="main-js">
     <!--Annet влезла-->
     <!--Slider-->
-    <!-- <div class="slider container"> -->
-      <!-- <div class="siema">
-      </div> -->
-    <!-- </div> -->
+    <!-- <div class="slider container">
+      <div class="siema">
+      </div>
+    </div> -->
     
     <!-- <div class="category container">
       <div class="">
@@ -318,19 +326,10 @@
         <use href="./images/sprite.svg#icon-next-btn"></use>
       </svg>
     </button> -->
-    
-    <!-- <div class="container">
-      <section class="pages"></section>
-      <div class="pages-section">
-        <a class="pages-item__first active" href="#first">1</a>
-        <a class="pages-item__second" href="#second">2</a>
-        <a class="pages-item__third" href="#third">3</a>
-      </div>
-    </div> -->
     <!--Annet влезла-->
     
     <!-- cards My-ads -->
-    <div class="container cards  ">
+    <div class="container cards ">
     
     
     </div>
@@ -342,14 +341,11 @@
       </div> -->
     
     <!--Annet влезла-->
-    <div class="container">
-      <section class="pages"></section>
-      <div class="pages-section">
-        <a class="pages-item__first active" href="#first">1</a>
-        <a class="pages-item__second" href="#second">2</a>
-        <a class="pages-item__third" href="#third">3</a>
+      <div class="pages-section container is-shown">
+        <a class="pages-item first active" href="#first"><span>1</span></a>
+        <a class="pages-item second" href="#second"><span>2</span></a>
+        <a class="pages-item third" href="#third"><span>3</span></a>
       </div>
-    </div>
     <!--Annet влезла-->
   </main>
     <!-- конфликт, закоментировал, у нас уже есть такая кнопка, но ету оставлю пока чтоб автор сам с ней разобрался -->
@@ -395,7 +391,7 @@
         </use>
       </svg>
     </button>
-    <button type="button" class="search__button">
+    <button type="submit" class="search__button">
       <svg aria-label="Кнопка поиска" class="icon-search icon-size icon-white" width="17" height="17">
         <use class="icon-serch" href="./images/sprite-min.svg#icon-serch"></use>
       </svg>
@@ -572,7 +568,7 @@
       <svg class="icon-copyright">
         <use href="./images/sprite.svg#icon-copyright"></use>
       </svg>
-      <div class="footer-item__year">2019</div>
+      <div class="footer-item__year">2020</div>
       <div class="footer-item__slash-first">|</div>
       <div class="footer-item__rights">All Rights Reserved</div>
       <div class="footer-item__slash-second">|</div>
