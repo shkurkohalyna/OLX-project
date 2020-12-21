@@ -181,10 +181,29 @@ function showModal(item) {
     '<p class="nav-and-description-button-nonhovered">Информация о<br> продавце</p>',
   );
 
-  for(let value of item.imageUrls){
-    console.log(value);
-    imagesSmall.insertAdjacentHTML('afterbegin','<li class="image-block-small-list-item"><img class="image-block-small-list-item-img" data-item-modal-imagesmall src="'+value+'" alt=""><div></div></li>');
+  console.log('length' + item.imageUrls.length)
+  imagesSmall.innerHTML = "";
+//   if(item.imageUrls.length===1){
+//     imagesSmall.insertAdjacentHTML('afterbegin','<li class="image-block-small-list-item"><img class="image-block-small-list-item-img" data-item-modal-imagesmall src="'+item.imageUrls[0]+'" alt=""><div data-mobile-swiper></div></li>');
+//   }else if(item.imageUrls.length>1){
+    
+//   }
+  for(let i = 0; i < item.imageUrls.length; i++){
+    imagesSmall.insertAdjacentHTML('afterbegin','<li class="image-block-small-list-item"><img class="image-block-small-list-item-img" data-item-modal-imagesmall src="'+item.imageUrls[i]+'" alt=""><div data-mobile-swiper></div></li>');
+}
+
+//   for(let value of item.imageUrls){
+//     console.log("PHOTO!");
+//     imagesSmall.insertAdjacentHTML('afterbegin','<li class="image-block-small-list-item"><img class="image-block-small-list-item-img" data-item-modal-imagesmall src="'+value+'" alt=""><div data-mobile-swiper></div></li>');
+//   }
+
+  divsMobile = document.querySelectorAll("[data-mobile-swiper]");
+  if(divsMobile.length>0){
+    divsMobile[0].classList.add("div-active");
   }
+
+  photosList = item.imageUrls;
+  photosSize = item.imageUrls.length;
 
   imagesSmall.addEventListener('click', changePhoto);
   console.log(favourites);
@@ -200,6 +219,9 @@ function showModal(item) {
   favourites.classList.remove('selected');
 }
 
+let photosList;
+let currentPhotoIdx = 0;
+let photosSize = 0;
 
 function changePhoto(event){
     console.log(event.target.src);
@@ -221,3 +243,88 @@ function closeOverlay(event){
 //            <img data-item-modal-imagesmall src="https://estore.ua/media/catalog/product/cache/8/image/650x650/9df78eab33525d08d6e5fb8d27136e95/m/t/mtp72_vw_34fr_watch-40-alum-gold-nc-5s_vw_34fr_wf_co_4.jpeg" alt="">
 //            <div></div>
 //          </li>
+
+let divsMobile;
+
+function swipedetect(el, callback){
+  
+    var touchsurface = el,
+    swipedir,
+    startX,
+    startY,
+    distX,
+    distY,
+    threshold = 150, //required min distance traveled to be considered swipe
+    restraint = 100, // maximum distance allowed at the same time in perpendicular direction
+    allowedTime = 300, // maximum time allowed to travel that distance
+    elapsedTime,
+    startTime,
+    handleswipe = callback || function(swipedir){}
+  
+    touchsurface.addEventListener('touchstart', function(e){
+        var touchobj = e.changedTouches[0]
+        swipedir = 'none'
+        // dist = 0
+        startX = touchobj.pageX
+        startY = touchobj.pageY
+        startTime = new Date().getTime() // record time when finger first makes contact with surface
+        e.preventDefault()
+    }, false)
+  
+    touchsurface.addEventListener('touchmove', function(e){
+        e.preventDefault() // prevent scrolling when inside DIV
+    }, false)
+  
+    touchsurface.addEventListener('touchend', function(e){
+        var touchobj = e.changedTouches[0]
+        distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
+        distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
+        elapsedTime = new Date().getTime() - startTime // get time elapsed
+        if (elapsedTime <= allowedTime){ // first condition for awipe met
+            if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint){ // 2nd condition for horizontal swipe met
+                swipedir = (distX < 0)? 'left' : 'right' // if dist traveled is negative, it indicates left swipe
+            }
+            else if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint){ // 2nd condition for vertical swipe met
+                swipedir = (distY < 0)? 'up' : 'down' // if dist traveled is negative, it indicates up swipe
+            }
+        }
+        handleswipe(swipedir)
+        e.preventDefault()
+    }, false)
+}
+  
+//USAGE:
+
+// const el = document.getElementById('someel')
+swipedetect(imgBig, function(swipedir){
+
+    if(getComputedStyle(document.querySelector(".image-block-small-list-item-img"), '.image-block-small-list-item-img').visibility!=="hidden")return;
+
+    if (swipedir =='left'){
+        // alert('You just swiped left!')
+        currentPhotoIdx--;
+        if(currentPhotoIdx<0){
+            currentPhotoIdx = photosSize-1;
+        }
+        changePhotoSwiper();
+    }else if(swipedir == 'right'){
+        // alert('You just swiped right!')
+        currentPhotoIdx++;
+        if(currentPhotoIdx===photosSize){
+            currentPhotoIdx = 0;
+        }
+        changePhotoSwiper();
+    }
+
+    console.log(currentPhotoIdx);
+});
+
+function changePhotoSwiper(){
+    for(let item of divsMobile){
+        item.classList.remove("div-active");
+    }
+
+    divsMobile[currentPhotoIdx].classList.add("div-active");
+
+    imgBig.src = photosList[currentPhotoIdx];
+}
