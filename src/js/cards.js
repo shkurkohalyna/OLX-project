@@ -18,9 +18,7 @@ fetchCall(API_OLX, 1).then(getArray)
 const chooseCategory = document.querySelector('.sidenav-desctop');
 chooseCategory.addEventListener('click', onCategoryClick)
 const mobileMenuRef = document.querySelector('[data-menu]');
-mobileMenuRef.addEventListener(`click`, onCategoryClick)
-// const paginationSection = document.querySelector('is-shown');
-
+mobileMenuRef.addEventListener(`click`, onCategoryClick
 function onCategoryClick(e) {
   // paginationSection.classList.remove('is-shown'); не фурыкает пока-что....
     if (e.target.nodeName !== `LI`) {
@@ -41,7 +39,8 @@ function onCategoryClick(e) {
 
 let value;
 function getArray(val) {
-     value = val;
+  value = val;
+
 }
   
 
