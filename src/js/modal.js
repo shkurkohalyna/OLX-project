@@ -43,7 +43,7 @@ const correctPrice = /\d+\.\d{2}\D{3}/;
 
 
 
-formAdd.addEventListener('submit', validatedForm);
+// formAdd.addEventListener('submit', validatedForm);
 
 export default function validatedForm(event){
     event.preventDefault();
