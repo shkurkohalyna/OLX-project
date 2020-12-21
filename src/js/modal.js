@@ -1,6 +1,29 @@
 
+import addModalTempl from '../templates/add-card.hbs' ;
+import { API_OLX } from './url';
+
+
+
+
+// створення шаблону(div.my-cards)
+function createNewModalTempl(){
+    myProducts.insertAdjacentHTML('afterbegin', addModalTempl())
+}
+
+// createNewModalTempl()
+
+
+
 import  { API_OLX } from './url';
 
+// Закриття модалки
+const refs = {
+    closeModalBtn: document.querySelector('[data-clouse-button-create-ad]'),
+    backdropAdd: document.querySelector('.backdrop-add'),
+    authModal: document.querySelector('[data-auth-modal]')
+};
+console.log(refs.backdropAdd);
+const myProducts =  document.querySelector('.my-cards');
 const formAdd = document.querySelector('#form-add');
 const selectProduct = formAdd.querySelector('#categori-product-add');
 const productPrice = formAdd.querySelector('#price-product-add');
@@ -38,8 +61,8 @@ function renderCategoriesList() {
 
 
 // Коректні дані
-const correctTel =  /((\+38)?\(?\d{3}\)?[\s\.-]?(\d{7}|\d{3}[\s\.-]\d{2}[\s\.-]\d{2}|\d{3}-\d{4}))/;
-const correctPrice = /\d+\.\d{2}\D{3}/;
+const correctTelV =  /((\+38)?\(?\d{3}\)?[\s\.-]?(\d{7}|\d{3}[\s\.-]\d{2}[\s\.-]\d{2}|\d{3}-\d{4}))/;
+const correctPriceV = /\d+\.\d{2}\D{3}/;
 
 
 
@@ -81,7 +104,7 @@ function correctFields(){
 
 function correctTelFunc(){
     if(tel.value !== ""){
-        if(!correctTel.test(tel.value)){
+        if(!correctTelV.test(tel.value)){
             console.log('невірно введений номер');
             const error = errorCreate('невірноно введений номер');
             tel.parentElement.insertBefore(error, tel);
@@ -91,7 +114,7 @@ function correctTelFunc(){
 
 function correctPriceFunc(){
     if(productPrice.value !== ""){
-        if(!correctPrice.test(productPrice.value)){
+        if(!correctPriceV.test(productPrice.value)){
             const error = errorCreate('введіть ціну згідно формату 0.00грн')
             productPrice.parentElement.insertBefore(error, productPrice);
         }
@@ -100,6 +123,7 @@ function correctPriceFunc(){
 
 
                    // Закриття модалки
+
 //  через кнопку
 closeModalBtn.addEventListener('click', modalClose);
  
@@ -124,10 +148,6 @@ function onModalBackdropClick(evt) {
   }
   if (evt.target.attributes.class === undefined) {return}
 }
-
-<<<<<<< HEAD
-=======
-
 // import addCardModal from '../templates/add-card.hbs';
 // import openModalAuth from './authorization';
 // import modalLogic from './addAndEditModalLogic';
@@ -232,4 +252,3 @@ function onModalBackdropClick(evt) {
 //     refs.modal.classList.toggle("is-hidden");
 //   }
 // })();
->>>>>>> f7a42a74c4cf1e0a5671efd467e90d237cef9149

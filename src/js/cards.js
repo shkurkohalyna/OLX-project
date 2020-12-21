@@ -3,47 +3,102 @@ import { API_OLX } from "./url.js";
 import  templateCard  from '../templates/cardset.hbs';
 // import { fetchCall } from './fetch/fetchCall.js';
 import { fetchGetSpecificCategory } from './fetch/fetchGetSpecificCategory';
+import { fetchPostAddFavoriteID } from './fetch/fetchPostAddFavoriteID';
+import { fetchCall } from "./fetch/fetchCall.js";
+import templateHomeCard from '../templates/home-card.hbs';
 
 // we wont be used this one;
 // fetchCall(API_OLX, 3).then(render => document.querySelector('.cards').innerHTML = templateCard(render.property))
 
 // category property is rendered by default;)))
-fetchGetSpecificCategory(API_OLX, 'property').then(render => document.querySelector('.cards').innerHTML = templateCard(render))
-
+// fetchCall(API_OLX, 1).then(render => document.querySelector('.cards').innerHTML = templateHomeCard(render))
+fetchCall(API_OLX, 1).then(getArray)
 
 // here we are rendering one category we are choosing by click on category;))
-setTimeout(() => {
-  const chooseCategory = document.querySelector('.sideNavDesctop__box');
+const chooseCategory = document.querySelector('.sidenav-desctop');
+chooseCategory.addEventListener('click', onCategoryClick)
+const mobileMenuRef = document.querySelector('[data-menu]');
+mobileMenuRef.addEventListener(`click`, onCategoryClick
+function onCategoryClick(e) {
+  // paginationSection.classList.remove('is-shown'); не фурыкает пока-что....
+    if (e.target.nodeName !== `LI`) {
+        return
+ }
 
-  chooseCategory.addEventListener('click', onCategoryClick)
+  e.preventDefault();
   
-  function onCategoryClick(e) {
-    e.preventDefault();
-    
-    const category = e.target.textContent;
-    fetchGetSpecificCategory(API_OLX, category.trim()).then(render => document.querySelector('.cards').innerHTML = templateCard(render))
-  }
+  const category = e.target.textContent;
+  
+  fetchGetSpecificCategory(API_OLX, category.trim()).then(render => document.querySelector('.cards').innerHTML = templateCard(render))
+  fetchGetSpecificCategory(API_OLX, category.trim()).then(getArray)
+    history.pushState(null, null, e.target.dataset.category);
+  setTimeout(() =>
+  { document.querySelector('.cards__title').textContent = category;
 }, 1000);
+}
+
+let value;
+function getArray(val) {
+  value = val;
+
+}
+  
+
+ 
+const modal = document.querySelector('[data-item-modal]');
+const name = document.querySelector('[data-item-modal-title]');
+const code = document.querySelector('[data-item-modal-code]');
+const imgBig = document.querySelector('[data-item-modal-imagebig]');
+const description = document.querySelector('[data-item-modal-description]');
+const price = document.querySelector('[data-item-modal-price]');
+
 
 
 
 // when we click on zoom, we will receive a modal with data about whole card:))
 // but it is not still working correct:((;
 
-setTimeout(() => {
-  const openModal = document.querySelector('.cardset');
-  
-  openModal.addEventListener('click', onClick);
+  const openModal = document.querySelector('.cards')
+  openModal.addEventListener('click', onExpandClick);
 
-  function onClick(e) {
+  function onExpandClick(e) {
     e.preventDefault();
+    const target = e.target.dataset.id;
+    
+    if (e.target.attributes[0].nodeName === 'data-open') {
 
-    const target = e.target;
-    if (target.attributes[0].nodeName === 'data-open') {
-      const opnover = document.querySelector('.overlay')
-      opnover.classList.add('isActive')
-      
+      for (const item of value) {
+
+      if (item._id === target) {
+        showModal(item)
+      }
     }
+    
+   }
   }
 
-}, 1000);
+function showModal(item) {
+  modal.classList.add('isActive');
+  name.textContent = item.title;
+  price.textContent = item.price + '.00 грн';
+  description.textContent = item.description;
+  imgBig.src = item.imageUrls[0];
+  code.textContent = "Код товару | "+item._id;
+}
+
+
+// This function is used by click on Like;
+openModal.addEventListener('click', onLikeClick);
+
+function onLikeClick(e) {
+  e.preventDefault()
+  const target = e.target.dataset.id;
+  if (e.target.attributes[0].nodeName === 'data-like') {
+    for (const item of value) {
+
+      if (item._id === target) {
+        fetchPostAddFavoriteID(API_OLX, item._id).then(console.log);
+      }
+    }
+  }
+}

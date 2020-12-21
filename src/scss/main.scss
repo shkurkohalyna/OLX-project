@@ -1,18 +1,22 @@
 @import './common/normalize';
 @import './common/breakpoints';
 @import './common/global';
+@import './common/preloader';
 @import './icons/icons';
 @import './common/container';
 @import './common/header';
 @import './common/header-modal';
 @import './common/slider';
+@import './common/pagination-style';
 @import './common/footer';
 @import './common/modal.scss';
+@import './common/head-card.scss';
 
 /*модалки*/
 @import './modals/modal-search';
 @import './common/auth-modal';
 @import './common/logout-popup';
+@import './common/edit-ad';
 @import './modals/modal_card_item';
 
 //card

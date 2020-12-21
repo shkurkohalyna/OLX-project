@@ -84,8 +84,7 @@
     order: 6;
   }
 }
-.sideNavDesctop__box {
-}
+
 .sideNavDesctop__text {
   display: inline-block;
   text-transform: capitalize;
@@ -252,6 +251,10 @@
   margin: 15px;
 
   @media screen and (min-width: $tablet-upper) {
+    // max-width: 724px;
+    // margin-top: 163px;
+    margin-left: auto;
+    margin-right: auto;
     margin: 163px 22px;
     padding: 55px;
   }
@@ -260,7 +263,7 @@
     margin-right: auto;
 
     width: 861px;
-    height: 698px;
+    height: auto;
     padding: 25px 105px 54px 105px;
   }
 }
@@ -271,14 +274,18 @@
   height: 24px;
   margin-left: auto;
   margin-bottom: 15px;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    fill: $orange-color;
+  }
 }
 .create-an-ad-modal__icon-clouse {
   width: 14px;
   height: 14px;
 }
 // блок с инпутами
-.create-an-ad-modal__title {
-}
+
 .create-an-ad-modal__title-text {
   display: block;
   font-weight: 500;
