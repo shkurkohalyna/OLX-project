@@ -2,6 +2,7 @@ import  { API_OLX } from './url';
 import { fetchRegistration } from './fetch/fetchRegistration';
 import { fetchAuthenticationLogin } from './fetch/fetchAuthenticationLogin';
 import { fetchAuthenGoogle } from './fetch/fetchAuthenGoogle';
+import { save } from './localStorage';
 
 const authRefs = {
 regestryBtn: document.querySelector(`[data-modal-open-registration]`),
@@ -115,7 +116,11 @@ authRefs.signInBtn.addEventListener('click', onLogInClick);
 function onLogInClick() {
     
     fetchAuthenticationLogin(API_OLX, getFormData()).then(response => {
-        localStorage.setItem('key', response.accessToken);
+/**сохранение данных логина в Localstorage */
+        save('key', response.accessToken)
+        save('refreshToken', response.refreshToken)
+        save('sid', response.sid)
+        save('UserToken', response)
         if (response.accessToken) {
             changeElem();
             authRefs.authModal.classList.add('is-hidden');

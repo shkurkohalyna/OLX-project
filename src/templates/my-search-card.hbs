@@ -1,5 +1,5 @@
 <section class=" my-ads-section  container-my-ads">
-  <h1 class="my-ads-section-title">Мої оголошення</h1>
+  <h1 class="my-ads-section-title">Результат пошуку</h1>
   <div class="my-ads-container ">
     {{#each this}}
     <article class="my-ads-card">
@@ -9,11 +9,6 @@
           <button data-like data-id="{{_id}}" class="my-ads-btn" type="submit" aria-label="Додати в обране">
             <svg class="my-ads-icon-btn " width="14" height="14">
               <use href="./images/sprite-min.svg#icon-heart-like"></use>
-            </svg>
-          </button>
-          <button class="my-ads-btn my-ads-btn-edit" type="button" aria-label="Редагувати оголошення">
-            <svg class="my-ads-icon-btn " width="14" height="14">
-              <use href="./images/sprite-min.svg#icon-edit"></use>
             </svg>
           </button>
           <button data-open data-id="{{_id}}" class="my-ads-btn my-ads-btn-open-card" type="button"

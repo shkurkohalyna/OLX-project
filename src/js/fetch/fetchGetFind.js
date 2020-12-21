@@ -1,6 +1,6 @@
 import { load } from "../localStorage";
 
-export async function fetchGetFind(url,find) {
+export async function fetchGetFind(url, find) {
   const key = load('key');
   const options = {
     method: 'GET',

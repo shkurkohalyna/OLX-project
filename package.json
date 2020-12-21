@@ -53,6 +53,7 @@
   "dependencies": {
     "@splidejs/splide": "^2.4.21",
     "core-js": "^3.6.5",
-    "handlebars": "^4.7.6"
+    "handlebars": "^4.7.6",
+    "siema": "^1.5.1"
   }
 }
