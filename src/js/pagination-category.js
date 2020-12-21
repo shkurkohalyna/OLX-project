@@ -21,10 +21,26 @@ const refs = {
 refs.mainPage.addEventListener('click', renderFirstPage);
 refs.secondPage.addEventListener('click', renderSecondPage);
 refs.thirdPage.addEventListener('click', renderThirdPage);
-refs.clearFilter.addEventListener('click', renderFirstPage);
-refs.touchLogo.addEventListener('click', renderFirstPage);
+refs.clearFilter.addEventListener('click', renderMainPage);
+refs.touchLogo.addEventListener('click', renderMainPage);
 
-fetchCall(API_OLX, 1).then(render => document.querySelector('.cards').innerHTML = templateHomeCard(render))
+fetchCall(API_OLX, 1).then(render => document.querySelector('.cards').innerHTML = templateHomeCard(render)).then(history.pushState(null, null, '/main'))
+
+function renderMainPage(event) {
+    event.preventDefault();
+
+    refs.mainPage.classList.add('active');
+    refs.secondPage.classList.remove('active');
+    refs.thirdPage.classList.remove('active');
+
+    history.pushState(null, null, '/main');
+
+    fetchCall(API_OLX, 1).then(render => document.querySelector('.cards').innerHTML = templateHomeCard(render))
+    .then(window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+    }))
+}
 
 function renderFirstPage(event) {
     event.preventDefault();
@@ -32,6 +48,8 @@ function renderFirstPage(event) {
     refs.mainPage.classList.add('active');
     refs.secondPage.classList.remove('active');
     refs.thirdPage.classList.remove('active');
+
+    history.pushState(null, null, '/page=1');
 
     fetchCall(API_OLX, 1).then(render => document.querySelector('.cards').innerHTML = templateHomeCard(render))
     .then(window.scrollTo({
@@ -45,6 +63,9 @@ function renderSecondPage(event) {
 
     refs.mainPage.classList.remove('active');
     refs.secondPage.classList.add('active');
+    refs.thirdPage.classList.remove('active');
+
+    history.pushState(null, null, '/page=2');
 
     fetchCall(API_OLX, 2).then(render => document.querySelector('.cards').innerHTML = templateHomeCard(render))
     .then(window.scrollTo({
@@ -56,8 +77,11 @@ function renderSecondPage(event) {
 function renderThirdPage(event) {
     event.preventDefault();
 
+    refs.mainPage.classList.remove('active');
     refs.secondPage.classList.remove('active');
     refs.thirdPage.classList.add('active');
+
+    history.pushState(null, null, '/page=3');
 
     fetchCall(API_OLX, 3).then(render => document.querySelector('.cards').innerHTML = templateHomeCard(render))
     .then(window.scrollTo({

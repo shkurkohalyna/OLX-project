@@ -18,13 +18,13 @@ fetchCall(API_OLX, 1).then(getArray)
 const chooseCategory = document.querySelector('.sidenav-desctop');
 chooseCategory.addEventListener('click', onCategoryClick)
 const mobileMenuRef = document.querySelector('[data-menu]');
-mobileMenuRef.addEventListener(`click`, onCategoryClick)
-const sideNavRef = document.querySelectorAll(`.sidenav-ref`)
+mobileMenuRef.addEventListener(`click`, onCategoryClick
 function onCategoryClick(e) {
-    console.log(sideNavRef);
+  // paginationSection.classList.remove('is-shown'); не фурыкает пока-что....
     if (e.target.nodeName !== `LI`) {
         return
  }
+
   e.preventDefault();
   
   const category = e.target.textContent;
