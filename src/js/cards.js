@@ -19,8 +19,9 @@ const chooseCategory = document.querySelector('.sidenav-desctop');
 chooseCategory.addEventListener('click', onCategoryClick)
 const mobileMenuRef = document.querySelector('[data-menu]');
 mobileMenuRef.addEventListener(`click`, onCategoryClick)
-
+const sideNavRef = document.querySelectorAll(`.sidenav-ref`)
 function onCategoryClick(e) {
+    console.log(sideNavRef);
     if (e.target.nodeName !== `LI`) {
         return
  }
@@ -38,7 +39,8 @@ function onCategoryClick(e) {
 
 let value;
 function getArray(val) {
-     value = val;
+  value = val;
+
 }
   
 

@@ -28,6 +28,7 @@ const btnSearchInput = document.querySelector(`.search__button`)
 const btnOpenCreateAnAdMobile = document.querySelector(`.js-create-an-ad-modal-mobile`)
 const btnClearFilter = document.querySelector(`.header-navigation__clear-filter`)
 const btnLogo = document.querySelector(`.header-navigation_logo`)
+const sideNavContainerRef = document.querySelector(`.sidenav__link`)
 // const openModalRegistrartion = document.querySelector(`[data-modal-open-registration]`)
 // const modalRegistration = document.querySelector(`[data-menu-registration]`)
 // const clouseModalRegistration = document.querySelector(` [data-clouse-button-modal-registration]`)
@@ -55,7 +56,12 @@ function closeBackDropSerch(evt) {
         }    }
        
 }
-
+sideNavContainerRef.addEventListener(`click`, clouseMobileSideNav)
+function clouseMobileSideNav(evt) {
+                if (evt.target.className === `sidenav__ref` || evt.target.className === `sidenav__dropdawn-content--text`) {
+                controlModalWindow(mobileMenuRef)
+        } 
+}
 onOpenModalHeader(openSideNav, mobileMenuRef)
 onOpenModalHeader(clouseSideNav, mobileMenuRef)
 onOpenModalHeader(openCreateAnAd, modalCreateAnAd)
@@ -63,6 +69,7 @@ onOpenModalHeader(btnOpenCreateAnAdMobile, modalCreateAnAd)
 onOpenModalHeader(clouseModalCreateAnAd, modalCreateAnAd)
 onOpenModalHeader(btnOpenModalSerch, modalSerch)
 onOpenModalHeader(btnClouseModalSerch, modalSerch)
+onOpenModalHeader(btnSearchInput, modalSerch)
 
 // onOpenModalHeader(openModalRegistrartion, modalRegistration)
 // onOpenModalHeader(clouseModalRegistration, modalRegistration)
